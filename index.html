@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="太太我恨你" startnode="10" creator="Twine" creator-version="2.9.1" format="SugarCube" format-version="2.37.3" ifid="2E726162-F761-480D-90C1-58ABE1A86C2C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<tw-storydata name="太太我恨你" startnode="10" creator="Twine" creator-version="2.9.1" format="SugarCube" format-version="2.37.3" ifid="2E726162-F761-480D-90C1-58ABE1A86C2C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
     color: #253133;
     background-color: #F9F5EC;
     overflow: auto;
@@ -265,7 +265,7 @@ input, select, textarea {
 	&lt;&lt;set $dengji=&quot;白银级&quot;&gt;&gt;&lt;&lt;set $jichuredu=20&gt;&gt;&lt;&lt;set $baiyin1+=1&gt;&gt;&lt;&lt;set $baiyin+=1&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $xiezuodengji&lt;=3&gt;&gt;/* 写作等级影响行动次数 */ 
+&lt;&lt;if $xiezuodengji&lt;=4&gt;&gt;/* 写作等级影响行动次数 */ 
 &lt;&lt;set $cishu-=2&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $cishu-=1&gt;&gt;
@@ -454,13 +454,13 @@ input, select, textarea {
 &lt;progress min=&quot;0&quot; max=&quot;2000&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
 &lt;br&gt;等级6 $xiezuo/2000
 &lt;&lt;elseif $xiezuodengji==7&gt;&gt;
-&lt;progress min=&quot;0&quot; max=&quot;2000&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
+&lt;progress min=&quot;0&quot; max=&quot;3000&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
 &lt;br&gt;等级7 $xiezuo/3000
 &lt;&lt;elseif $xiezuodengji==8&gt;&gt;
-&lt;progress min=&quot;0&quot; max=&quot;2000&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
+&lt;progress min=&quot;0&quot; max=&quot;4500&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
 &lt;br&gt;等级8 $xiezuo/4500
 &lt;&lt;elseif $xiezuodengji==9&gt;&gt;
-&lt;progress min=&quot;0&quot; max=&quot;2000&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
+&lt;progress min=&quot;0&quot; max=&quot;7500&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
 &lt;br&gt;等级9 $xiezuo/7500
 &lt;&lt;elseif $xiezuodengji==10&gt;&gt;
 &lt;progress min=&quot;0&quot; max=&quot;0&quot; @value=&quot;$xiezuo&quot;&gt;&lt;/progress&gt;
@@ -476,7 +476,7 @@ input, select, textarea {
 &lt;&lt;if $start&gt;0&gt;&gt;
 &lt;div class=&quot;shuxing&quot;&gt;
 &lt;&lt;do&gt;&gt;
-今天是当同人女的第$day天，你已经创作了$tongren篇同人。&lt;br&gt;&lt;&lt;xiezuodengji&gt;&gt;&lt;&lt;max&gt;&gt;
+今天是当同人女的第$day天，你已经创作了$tongren篇同人。&lt;br&gt;&lt;&lt;xiezuodengji&gt;&gt;&lt;&lt;max&gt;&gt;&lt;&lt;qiuyuerenke&gt;&gt;
 剩余行动点：$cishu&amp;nbsp; &amp;nbsp; 零用钱：$money&lt;br&gt;
 &lt;&lt;baomingtixing&gt;&gt;
 灵感：&lt;progress min=&quot;0&quot; max=&quot;10&quot; @value=&quot;$linggan&quot;&gt;&lt;/progress&gt; $linggan/10 &lt;br&gt;
@@ -1540,13 +1540,13 @@ input, select, textarea {
 &lt;&lt;case 10&gt;&gt;（一段原作的经典台词）
 [[回复|回复（评论）]]&lt;br&gt;
 [[不回复|不回复（评论）]]&lt;br&gt;
-&lt;&lt;case 11&gt;&gt;呜呜呜……最后一句也太感人了……我都掉小珍珠了……
+&lt;&lt;case 11&gt;&gt;呜呜呜……最后一句也太感人了……我都掉小珍珠了……&lt;br&gt;
 [[回复|回复（评论）]]&lt;br&gt;
 [[不回复|不回复（评论）]]&lt;br&gt;
-&lt;&lt;case 12&gt;&gt;求你继续写吧我什么都会做的……
+&lt;&lt;case 12&gt;&gt;求你继续写吧我什么都会做的……&lt;br&gt;
 [[回复|回复（评论）]]&lt;br&gt;
 [[不回复|不回复（评论）]]&lt;br&gt;
-&lt;&lt;case 13&gt;&gt;❤❤
+&lt;&lt;case 13&gt;&gt;❤❤&lt;br&gt;
 [[回复|回复（评论）]]&lt;br&gt;
 [[不回复|不回复（评论）]]&lt;br&gt;
 &lt;&lt;case 14&gt;&gt;老师求私！&lt;br&gt;
@@ -2036,6 +2036,7 @@ input, select, textarea {
 &lt;&lt;set $chaoxi=0&gt;&gt;
 &lt;&lt;set $chaoxicishu=0&gt;&gt;/*抄袭次数*/
 &lt;&lt;set $chaoxibeizhua=0&gt;&gt;
+&lt;&lt;set $chaoxitaotuo=0&gt;&gt;/*抄袭逃脱*/
 
 /*干了坏事之后小北的差分对话*/
 &lt;&lt;set $chaoxibeizhuaxiaobei=0&gt;&gt;
@@ -2067,6 +2068,14 @@ input, select, textarea {
 &lt;&lt;set $dayai=0&gt;&gt;/*每天用ai写文的次数*/
 &lt;&lt;set $aibeizhua=0&gt;&gt;/*ai写文被抓*/
 
+&lt;&lt;set $aibeizhuaxiaobei=0&gt;&gt;
+&lt;&lt;set $aibeizhuaqunzhu=0&gt;&gt;
+&lt;&lt;set $baozhengbuyongai=0&gt;&gt;/*保证不用ai*/
+
+
+&lt;&lt;set $qiuyuerenke=0&gt;&gt;/*秋月的认可*/
+&lt;&lt;set $qiuyueguanzhu=0&gt;&gt;/*秋月的关注*/
+ &lt;&lt;set $qiuyueliaotian=0&gt;&gt;/*秋月聊天开关*/
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="153" name="就这样结束" tags="" position="3600,375" size="100,100">好了，好了，差不多得了。
 就算是再爱$cp，也总有厌倦的一天。
 你再也不想为爱发电了，再也不想掺和进同人圈没完没了的破事里了！
@@ -2154,14 +2163,14 @@ END：老娘不干了！</tw-passagedata><tw-passagedata pid="154" name="特殊�
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lianwen2==1&gt;&gt;
-&lt;&lt;set $jiegao2=29-$day&gt;&gt;
+&lt;&lt;set $jiegao2=59-$day&gt;&gt;
 	&lt;&lt;if $jiegao2==0&gt;&gt;你报名了24h联文活动，今天是截稿日。&lt;br&gt;
     &lt;&lt;elseif $jiegao2&lt;0&gt;&gt;&lt;&lt;set $lianwenmiss2=1&gt;&gt;
     &lt;&lt;else&gt;&gt;你报名了24h联文活动，距离截稿日还有$jiegao2天。&lt;br&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $jielong2==1&gt;&gt;
-&lt;&lt;set $jiegao2=29-$day&gt;&gt;
+&lt;&lt;set $jiegao2=59-$day&gt;&gt;
 	&lt;&lt;if $jiegao2==0&gt;&gt;你报名了24h文画接龙活动，今天是截稿日。&lt;br&gt;
     &lt;&lt;elseif $jiegao2&lt;0&gt;&gt;&lt;&lt;set $jielongmiss2=1&gt;&gt;
     &lt;&lt;else&gt;&gt;你报名了24h文画接龙活动，距离截稿日还有$jiegao2天。&lt;br&gt;
@@ -2396,7 +2405,7 @@ END：写文救不了同人女
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="181" name="找灵感" tags="nobr widget" position="2200,1950" size="100,100">&lt;&lt;widget &quot;xunzhaolinggan&quot;&gt;&gt;
 &lt;&lt;if $zhaolinggan==0 and $linggan==0&gt;&gt;灵感不够，无法继续给$cp拉磨了。除了刷tag和短视频，还有哪里能获得灵感呢？&lt;br&gt;
 行动【寻找灵感】开启。&lt;br&gt;&lt;&lt;set $zhaolinggan=1&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $zhaolinggan==1 and $cishu&gt;0&gt;&gt;[[寻找灵感]]行动点-2&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $zhaolinggan==1 and $cishu&gt;=2&gt;&gt;[[寻找灵感]]行动点-2&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="182" name="寻找灵感" tags="nobr" position="2200,2075" size="100,100">你试图寻找灵感。&lt;br&gt;
 &lt;&lt;set _suiji to random(1,12)&gt;&gt;
 &lt;&lt;switch _suiji&gt;&gt;
@@ -2643,19 +2652,19 @@ END：莫伸手，伸手必被抓</tw-passagedata><tw-passagedata pid="194" name
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="205" name="小北聊天恢复倒计时" tags="nobr widget" position="50,1900" size="100,100">&lt;&lt;widget &quot;xiaobeiliaotiandaojishi&quot;&gt;&gt;
 &lt;&lt;if $xiaobeiguanbi&gt;0&gt;&gt;&lt;&lt;set $xiaobeiguanbi-=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="206" name="酒香不怕巷子深" tags="nobr widget" position="650,475" size="100,100">&lt;&lt;widget &quot;turanhuole&quot;&gt;&gt;
-&lt;&lt;if $baiyin1&gt;0&gt;&gt;&lt;&lt;set _baiyin to random(1,1000)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _baiyin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $huangjin1&gt;0&gt;&gt;&lt;&lt;set _huangjin to random(1,1000)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _huangjin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $zuanshi1&gt;0&gt;&gt;&lt;&lt;set _zuanshi to random(1,1000)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _zuanshi to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $bojin1&gt;0&gt;&gt;&lt;&lt;set _bojin to random(1,1000)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _bojin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if _baiyin+$baiyin1&gt;1000&gt;&gt;你的一篇白银级文章突然火了！运气这种事谁也说不准，总之你的粉丝数量猛涨了一波。&lt;br&gt;
+&lt;&lt;if $baiyin1&gt;0&gt;&gt;&lt;&lt;set _baiyin to random(1,500)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _baiyin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $huangjin1&gt;0&gt;&gt;&lt;&lt;set _huangjin to random(1,500)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _huangjin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $zuanshi1&gt;0&gt;&gt;&lt;&lt;set _zuanshi to random(1,500)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _zuanshi to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $bojin1&gt;0&gt;&gt;&lt;&lt;set _bojin to random(1,500)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set _bojin to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if _baiyin+$baiyin1&gt;1000&gt;&gt;你的一篇白银级文章突然火了！运气这种事谁也说不准，总之你的粉丝数量猛涨了一波。&lt;br&gt;&lt;&lt;set $baiyin1-=1&gt;&gt;
 人气+100&lt;br&gt;&lt;&lt;set $renqi+=100&gt;&gt;
 &lt;&lt;elseif _huangjin+$huangjin1&gt;1000&gt;&gt;
 你的一篇黄金级文章突然火了！运气这种事谁也说不准，总之你的粉丝数量猛涨了一波。&lt;br&gt;
-人气+200&lt;br&gt;&lt;&lt;set $renqi+=200&gt;&gt;
-&lt;&lt;elseif _bojin+$bojin1&gt;1000&gt;&gt;
+人气+200&lt;br&gt;&lt;&lt;set $renqi+=200&gt;&gt;&lt;&lt;set $huangjin1-=1&gt;&gt;
+&lt;&lt;elseif _bojin+$bojin1&gt;1000&gt;&gt;&lt;&lt;set $bojin1-=1&gt;&gt;
 你的一篇铂金级文章突然火了！运气这种事谁也说不准，总之你的粉丝数量猛涨了一波。&lt;br&gt;
 人气+400&lt;&lt;set $renqi+=400&gt;&gt;
-&lt;&lt;elseif _zuanshi+$zuanshi1&gt;1000&gt;&gt;
+&lt;&lt;elseif _zuanshi+$zuanshi1&gt;1000&gt;&gt;&lt;&lt;set $zuanshi1-=1&gt;&gt;
 你的一篇钻石级文章突然火了！运气这种事谁也说不准，总之你的粉丝数量猛涨了一波。&lt;br&gt;
 人气+800&lt;br&gt;&lt;&lt;set $renqi+=800&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -2982,10 +2991,10 @@ ai写文不得好死！&lt;br&gt;
 [[返回|逛小斧头]]
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="235" name="24h（2）" tags="widget nobr" position="3950,700" size="100,100">&lt;&lt;widget &quot;sishibaxiaoshi2&quot;&gt;&gt;
-目前有两个$cp 24h活动正在征集文手，报名截止时间为第20天，截稿日为第29天。&lt;br&gt;
+目前有两个$cp 24h活动正在征集文手，报名截止时间为第50天，截稿日为第59天。&lt;br&gt;
 ·24h文画接龙活动&lt;&lt;if $jielong2==0&gt;&gt;[[报名应征|文画接龙2]]&lt;&lt;elseif $jielong2==-1&gt;&gt;【已被拒】&lt;&lt;/if&gt;&gt;&lt;br&gt;
 要求：人气&gt;200 (或者，有人脉也可以？)&lt;br&gt; 
-·限定主题24h联文活动&lt;&lt;if $lianwen2==0&gt;&gt;[[报名应征|联文2]]&lt;&lt;elseif $lianwen1==-1&gt;&gt;【已被拒】&lt;&lt;/if&gt;&gt;&lt;br&gt;
+·限定主题24h联文活动&lt;&lt;if $lianwen2==0&gt;&gt;[[报名应征|联文2]]&lt;&lt;elseif $lianwen2==-1&gt;&gt;【已被拒】&lt;&lt;/if&gt;&gt;&lt;br&gt;
 要求：写作等级4级&lt;br&gt;  
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="236" name="文画接龙2" tags="nobr" position="4050,700" size="100,100">你打算报名文画接龙活动。&lt;br&gt;
 &lt;&lt;if $qunzhu&gt;5&gt;&gt;
@@ -3084,7 +3093,7 @@ ai写文不得好死！&lt;br&gt;
 &lt;&lt;set $qiuyue+=1&gt;&gt;
 [[返回|玩智能手机]]</tw-passagedata><tw-passagedata pid="246" name="当没看见" tags="" position="675,1275" size="100,100">你已经在各种场合听说过秋月的名字。$cp圈内的镇圈神文她榜上有名，在你的印象里，她是高高在上的圈内女神，她竟然关注了你，真让你意外。
 你不打算理会她。她关注你，你就应该关注她吗？
-[[返回|玩智能手机]]</tw-passagedata><tw-passagedata pid="247" name="秋月的认可" tags="" position="500,100" size="100,100">&lt;&lt;widget &quot;qiuyuerenke&quot;&gt;&gt;
+[[返回|玩智能手机]]</tw-passagedata><tw-passagedata pid="247" name="秋月的认可" tags="nobr widget" position="500,100" size="100,100">&lt;&lt;widget &quot;qiuyuerenke&quot;&gt;&gt;
 &lt;&lt;if $baiyin&gt;=5&gt;&gt;&lt;&lt;set $qiuyuerenke=1&gt;&gt;
 &lt;&lt;elseif $huangjin&gt;=2&gt;&gt;&lt;&lt;set $qiuyuerenke=2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
