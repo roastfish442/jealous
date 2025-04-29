@@ -3964,7 +3964,16 @@ ai写文不得好死！&lt;br&gt;
     &lt;&lt;run Dialog.wikiPassage(&quot;赛博灵堂&quot;)&gt;&gt;
     &lt;&lt;run Dialog.open()&gt;&gt;
   &lt;&lt;/link&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="252" name="StoryCaption" tags="" position="300,125" size="100,100">当前用户名：$player
+&lt;&lt;/if&gt;&gt;
+  &lt;&lt;link &quot;赛博灵堂&quot;&gt;&gt;
+    &lt;&lt;set _tempGrass = random(0,$accountHistory.length)&gt;&gt;  
+    &lt;&lt;if $grass &lt;= _tempGrass&gt;&gt;
+      &lt;&lt;set $grass += $accountHistory.length&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;run Dialog.create(&quot;赛博灵堂&quot;)&gt;&gt;
+    &lt;&lt;run Dialog.wikiPassage(&quot;赛博灵堂&quot;)&gt;&gt;
+    &lt;&lt;run Dialog.open()&gt;&gt;
+  &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="252" name="StoryCaption" tags="" position="300,125" size="100,100">当前用户名：$player
 这是当前的第$reborn个账号
 当前人气：$renqi</tw-passagedata><tw-passagedata pid="253" name="赛博灵堂" tags="" position="75,275" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;div class=&quot;memorial-main&quot;&gt;
