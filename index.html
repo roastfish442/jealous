@@ -9458,7 +9458,7 @@ END：在风口上猪都能飞起来
 &lt;&lt;elseif $pianshu&lt;10&gt;&gt;&lt;br&gt;
 你要收录的字数不多，自制折页搞不好更划算一点。&lt;br&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $zongzishu[$b]=$pianshu*0.1&gt;&gt;
+&lt;&lt;set $zongzishu[$b]=Math.floor($pianshu*0.1)&gt;&gt;
 你的&lt;&lt;$fanbook[$b]&gt;&gt;预计字数为$zongzishu[$b]万，确定吗？&lt;br&gt;
     &lt;&lt;if $kaiche&gt;0&gt;&gt;[[确定|文章删节][$yixuanpianshu+=$pianshu]]&lt;br&gt;
     &lt;&lt;else&gt;&gt;[[确定|选择尺寸][$yixuanpianshu+=$pianshu]]&lt;br&gt;
@@ -9614,7 +9614,7 @@ END：在风口上猪都能飞起来
 
 &lt;&lt;if $qiuyueguest==1&gt;&gt;&lt;&lt;set $qiuyuegongqi-=1&gt;&gt;&lt;&lt;if $qiuyuegongqi==0&gt;&gt;&lt;&lt;set $qiuyuejiaogao=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $jiaoduizhuangtai==&quot;校对进行中&quot;&gt;&gt;&lt;&lt;set $jiaoduigongqi-=1&gt;&gt;&lt;&lt;if $jiaoduigongqi==0&gt;&gt;&lt;&lt;set $jiaoduijiaogao=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $paibanzhuangtai==&quot;校对进行中&quot;&gt;&gt;&lt;&lt;set $paibangongqi-=1&gt;&gt;&lt;&lt;if $paibangongqi==0&gt;&gt;&lt;&lt;set $paibanjiaogao=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $paibanzhuangtai==&quot;排版进行中&quot;&gt;&gt;&lt;&lt;set $paibangongqi-=1&gt;&gt;&lt;&lt;if $paibangongqi==0&gt;&gt;&lt;&lt;set $paibanjiaogao=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $xuantuzhuangtai==&quot;画师制作中&quot;&gt;&gt;&lt;&lt;set $xuantugongqi-=1&gt;&gt;&lt;&lt;if $xuantugongqi==0&gt;&gt;&lt;&lt;set $xuantujiaogao=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $dayangzhuangtai==&quot;运输中&quot;&gt;&gt;&lt;&lt;set $dayanggongqi-=1&gt;&gt;&lt;&lt;if $dayanggongqi==0&gt;&gt;&lt;&lt;set $dayangdaohuo=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $dahuozhuangtai==&quot;运往宿舍&quot;&gt;&gt;&lt;&lt;set $dahuogongqi-=1&gt;&gt;&lt;&lt;if $dahuogongqi==0&gt;&gt;&lt;&lt;set $dahuodaohuo=1&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -9709,7 +9709,7 @@ END：在风口上猪都能飞起来
 写好了！&lt;br&gt;
 &lt;&lt;set $tedian+=1&gt;&gt;
 &lt;&lt;set $pianshu+=1&gt;&gt;
-&lt;&lt;set $zongzishu[$b]=$pianshu*0.1&gt;&gt;
+&lt;&lt;set $zongzishu[$b]=Math.floor($pianshu*0.1)&gt;&gt;
 &lt;&lt;if $chicun[$b]==&quot;A5&quot;&gt;&gt;
 &lt;&lt;set $yeshu[$b]=$pianshu*2&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -10459,7 +10459,7 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $maichaole[_i]==1&gt;&gt;
 预售已经卖了$yushoushuliang[_i]本了，再这样下去你印的本子数量可能不够。&lt;br&gt;
 [[停止预售]]&lt;br&gt;&lt;&lt;set $bugou=_i&gt;&gt;
-[[继续预售]]&lt;br&gt;&lt;&lt;set $maichaole[_i]==2&gt;&gt;
+[[继续预售]]&lt;br&gt;&lt;&lt;set $maichaole[_i]=2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="710" name="加印" tags="" position="3350,4925" size="100,100">你打算加印&lt;&lt;numberbox &quot;$benshu[$b]&quot; 10 autofocus&gt;&gt;本。
