@@ -790,6 +790,9 @@ progress.shuxing::-webkit-progress-bar {
 $(document).on('click', '#save', function() {
     UI.saves();
 });
+$(document).on('click', '#restart', function() {
+    UI.restart();
+});
 // 赛博灵堂按钮点击事件
    $(document).on('click', '#menu', function() {
     // 获取SugarCube变量
@@ -9380,6 +9383,7 @@ END：在风口上猪都能飞起来
 
   &lt;div class=&quot;action-buttons&quot;&gt;
     &lt;button class=&quot;action-button&quot; id=&quot;save&quot;&gt;存档&lt;/button&gt;
+    &lt;button class=&quot;action-button&quot; id=&quot;restart&quot;&gt;重新开始&lt;/button&gt;
     &lt;button class=&quot;action-button&quot; id=&quot;menu&quot;&gt;赛博灵堂&lt;/button&gt;
     &lt;button class=&quot;action-button&quot; id=&quot;info&quot;&gt;制作信息&lt;/button&gt;
     &lt;button class=&quot;action-button&quot; id=&quot;settings&quot;&gt;设置&lt;/button&gt;
@@ -10447,7 +10451,7 @@ END：在风口上猪都能飞起来
     &lt;&lt;set $jiayin=0&gt;&gt;
     &lt;&lt;set $jiayingongqi=0&gt;&gt;
     &lt;&lt;set $jiayinzhuangtai=&quot;未开始&quot;&gt;&gt;
-    &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="706" name="未命名片段 1" tags="" position="3625,6200" size="100,100"></tw-passagedata><tw-passagedata pid="707" name="停止预售" tags="" position="4300,4825" size="100,100">你停止了预售。&lt;&lt;set $yushouzhuangtai[$bugou]==&quot;已结束&quot;&gt;&gt;
+    &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="706" name="未命名片段 1" tags="" position="3625,6200" size="100,100">&lt;&lt;zhuanshengtongrenben&gt;&gt;</tw-passagedata><tw-passagedata pid="707" name="停止预售" tags="" position="4300,4825" size="100,100">你停止了预售。&lt;&lt;set $yushouzhuangtai[$bugou]==&quot;已结束&quot;&gt;&gt;
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="708" name="继续预售" tags="" position="4425,4825" size="100,100">你打算继续预售。如果有人继续购买你的本子，你需要加印才能提供足够的数量。
 &lt;&lt;set $jiayin=1&gt;&gt;
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="709" name="卖超了" tags="nobr widget" position="4050,5025" size="100,100">&lt;&lt;widget &quot;maichaole&quot;&gt;&gt;
