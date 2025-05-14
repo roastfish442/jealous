@@ -3530,7 +3530,7 @@ Setting.addList("fontSize", {
     &lt;&lt;if $jiegaoopen==1&gt;&gt;[[接稿赚钱]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;if $jiegaoopen==2&gt;&gt;[[接稿赚钱|接稿]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     [[查看宿舍]]&lt;br&gt;
-    &lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0&gt;&gt;[[把本子送给亲友|亲友本赠送]]&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0 and $dahuodaili[$zengsongbianhao]==2&gt;&gt;[[把本子送给亲友|亲友本赠送]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     [[睡觉]]&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="被挂了（因为骂人）" tags="nobr widget" position="3575,100" size="100,100">&lt;&lt;widget &quot;beiguale&quot;&gt;&gt;
 你私信辱骂其他人的聊天记录被公之于众，转发和评论区里大量的负面评论将你淹没，粉丝纷纷取关你，你在圈内的名声也一落千丈。&lt;br&gt;
@@ -9472,6 +9472,7 @@ END：在风口上猪都能飞起来
 &lt;&lt;button &quot;压力-10&quot;&gt;&gt;&lt;&lt;set $yali-=10&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;br&gt;
 &lt;&lt;button &quot;热情+10&quot;&gt;&gt;&lt;&lt;set $reqing+=10&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;br&gt;
 &lt;&lt;button &quot;灵感+10&quot;&gt;&gt;&lt;&lt;set $linggan+=10&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;br&gt;
+&lt;&lt;button &quot;同人本制作开&quot;&gt;&gt;&lt;&lt;set $tongrenbenzhizuo=1&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="595" name="选择字数" tags="nobr" position="2100,3975" size="100,100">接下来，请确认你的《$fanbook[$b]》中要收录多少文章吧。&lt;br&gt;
 &lt;&lt;set $kexuanpianshu=$tongren-$yixuanpianshu-$kaiche&gt;&gt;
 &lt;&lt;set _zishu=$kexuanpianshu*0.1&gt;&gt;
@@ -9523,7 +9524,7 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $fengmian&gt;0 and $paiban&gt;0 and $kaishou==0&gt;&gt;[[印量调查|印量调查（正式流程）]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $fengmian&gt;0 and $paiban&gt;0 and $yinchang==0&gt;&gt;[[下印|下印（正式流程）]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $yinchang&gt;0 and $dahuozhuangtai==&quot;未开始&quot;&gt;&gt;[[联络印厂]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $jiayin&gt;0&gt;&gt;[[加印]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $jiayin&gt;0 and $wanshou[$b]==0&gt;&gt;[[加印]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $kaishou==0&gt;&gt;[[定价]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $fengmian&gt;0 and $paiban&gt;0 and $daili==0&gt;&gt;[[寻找寄售店铺]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $daili&gt;0 and $kaishou==0&gt;&gt;[[联络代理]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
@@ -9537,7 +9538,7 @@ END：在风口上猪都能飞起来
 目前本子的内容如下：&lt;br&gt;
 总字数$zongzishu[$b]万字，收录$tedian篇特典，$guest篇guest，预计页数$yeshu[$b]P。&lt;br&gt;
 校对：$jiaoduizhuangtai&lt;br&gt;&lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$jiaoduigongqi天。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
-排版：$paibanzhuangtai&lt;br&gt;&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$paibangongqi天。&lt;&lt;/if&gt;&gt;
+排版：$paibanzhuangtai&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$paibangongqi天。&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $xiezuodengji&gt;=5 and $cishu&gt;=1&gt;&gt;
@@ -9570,7 +9571,8 @@ END：在风口上猪都能飞起来
 [[返回|材料准备]]</tw-passagedata><tw-passagedata pid="603" name="宣发（正式流程）" tags="nobr" position="3025,4600" size="100,100">是时候宣传你的《$fanbook[$b]》了！&lt;br&gt;
 &lt;&lt;if $xuantu==0&gt;&gt;
 你现在还没有宣传图。&lt;br&gt;
-宣传图状态：$xuantuzhuangtai&lt;&lt;if $xuantugongqi&gt;0&gt;&gt;，剩余$xuantugongqi天。&lt;&lt;/if&gt;&gt;&lt;br
+宣传图状态：$xuantuzhuangtai
+&lt;&lt;if $xuantugongqi&gt;0&gt;&gt;，剩余$xuantugongqi天。&lt;&lt;/if&gt;&gt;&lt;br&gt;
 [[准备宣传图]]&lt;br&gt;
 &lt;&lt;else&gt;&gt;
 现在你可以发图宣传了！&lt;br&gt;
@@ -10142,7 +10144,7 @@ END：在风口上猪都能飞起来
 [[返回|快乐同人女]]&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="667" name="就它了！(宣传图)" tags="" position="3150,4975" size="100,100">就决定是你了！
 你看着自己做的宣图爱不释手，决定就用它了。
-[[返回|材料准备]]</tw-passagedata><tw-passagedata pid="668" name="书签" tags="" position="2725,5800" size="100,100">印书签也要有图才行。
+[[返回|宣发（正式流程）]]</tw-passagedata><tw-passagedata pid="668" name="书签" tags="" position="2725,5800" size="100,100">印书签也要有图才行。
 &lt;&lt;if $fengmian&gt;0&gt;&gt;[[用封面的图|用封面的图(书签)]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $maolingguest&gt;0&gt;&gt;[[用猫羚的G图|用猫羚的G图(书签)]]&lt;&lt;/if&gt;&gt;
 [[返回|无料（正式流程）]]</tw-passagedata><tw-passagedata pid="669" name="明信片" tags="" position="2475,5800" size="100,100">印明信片也要有图才行。
@@ -10272,7 +10274,7 @@ END：在风口上猪都能飞起来
 这些东西要寄到哪里？你该不会打算全都堆在宿舍里吧？&lt;br&gt;
 &lt;&lt;if $daili&gt;0&gt;&gt;[[代理店铺]]&lt;br&gt;&lt;&lt;else&gt;&gt;也许你应该去找一个代理店铺寄售你的本子。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $canjiapc31&gt;0&gt;&gt;[[发往PC31仓库]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-[[再想想|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="685" name="代理店铺" tags="" position="4025,4825" size="100,100">你准备把东西寄到代理店铺。&lt;br&gt;
+[[再想想|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="685" name="代理店铺" tags="nobr" position="4025,4825" size="100,100">你准备把东西寄到代理店铺。&lt;br&gt;
 &lt;&lt;set $money-=$zongjia&gt;&gt;
 &lt;&lt;set $jiaodui1[$b]=$jiaoduizhiliang&gt;&gt;
 &lt;&lt;set $fengmian1[$b]=$fengmianzhiliang&gt;&gt;
@@ -10339,6 +10341,7 @@ END：在风口上猪都能飞起来
 	&lt;&lt;if $yushou[$b]==1&gt;&gt;
 &lt;&lt;set $yushouzhuangtai[$b]=&quot;现货发售&quot;&gt;&gt;
 &lt;&lt;set $xiayiben+=1&gt;&gt;你现在可以筹备下一本同人本了。&lt;br&gt;
+&lt;&lt;set $tongrenbenchoubeizhong=0&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $benziyuliang[$b]+=$benshu[$b]&gt;&gt;
 &lt;&lt;set $yishoushuliang[$b]=$yushoushuliang[$b]&gt;&gt;
@@ -10347,28 +10350,22 @@ END：在风口上猪都能飞起来
 
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="696" name="同人本贩售" tags="nobr" position="2700,6150" size="100,100">在这里你可以查看同人本的销售状态。&lt;br&gt;
 &lt;&lt;for _i to 0; _i lt $book; _i++&gt;&gt;
-&lt;&lt;if $yushou[_i]==0&gt;&gt;
+
+&lt;&lt;if $yushouzhuangtai[_i]==&quot;现货发售&quot;&gt;&gt;
 《$fanbook[_i]》：现货$benziyuliang[_i]本，已售出$yishoushuliang[_i]本。&lt;br&gt;
-&lt;&lt;if $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;这本同人本已经停止销售了。&lt;br&gt;
-&lt;&lt;elseif $benziyuliang[_i]==0&gt;&gt;《$fanbook[_i]》完售了！&lt;br&gt;
-&lt;&lt;if $repo[_i]==0&gt;&gt;[[查看repo][$repo1=_i]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wanshou[_i]==0&gt;&gt;太好了，你的心情变得超级好！&lt;br&gt;&lt;&lt;set $reqing+=3&gt;&gt;&lt;&lt;set $yali-=3&gt;&gt;&lt;&lt;set $jidu=0&gt;&gt;&lt;&lt;set $wanshou[_i]=1&gt;&gt;&lt;&lt;set $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $wanshou[_i]==1&gt;&gt;
+太好了，你的心情变得超级好！&lt;br&gt;&lt;&lt;set $reqing+=3&gt;&gt;&lt;&lt;set $yali-=3&gt;&gt;&lt;&lt;set $jidu=0&gt;&gt;&lt;&lt;set $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-	&lt;&lt;if $dahuodaili[_i]==2&gt;&gt;
-《$fanbook[_i]》：现货$benziyuliang[_i]本，已售出$yishoushuliang[_i]本。&lt;br&gt;
-&lt;&lt;if $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;这本同人本已经停止销售了。&lt;br&gt;
-&lt;&lt;elseif $benziyuliang[_i]==0&gt;&gt;《$fanbook[_i]》完售了！]&lt;br&gt;
-&lt;&lt;if $repo[_i]==0&gt;&gt;[[查看repo][$repo1=_i]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $wanshou[_i]==0&gt;&gt;太好了，你的心情变得超级好！&lt;br&gt;&lt;&lt;set $reqing+=3&gt;&gt;&lt;&lt;set $yali-=3&gt;&gt;&lt;&lt;set $jidu=0&gt;&gt;&lt;&lt;set $wanshou[_i]=1&gt;&gt;&lt;&lt;set $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-	&lt;&lt;else&gt;&gt;
+&lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已开始&quot;&gt;&gt;
 《$fanbook[_i]》：已售出$yushoushuliang[_i]本。&lt;br&gt;
-&lt;&lt;if $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;这本同人本已经停止销售了。&lt;br&gt;&lt;&lt;/if&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
+&lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;
+《$fanbook[_i]》：已下架，最终售出$yishoushuliang[_i]本。&lt;br&gt;
+&lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;
+《$fanbook[_i]》：已完售，最终售出$yishoushuliang[_i]本。&lt;br&gt;
+&lt;&lt;if $repo[_i]==0&gt;&gt;[[查看repo][$repo1=_i]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
-[[销售额结算]]
+[[销售额结算]]&lt;br&gt;
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="697" name="同人本现货销量计算" tags="nobr widget" position="2800,6300" size="100,100">&lt;&lt;widget &quot;xianhuochushixiaoliangjisuan&quot;&gt;&gt;
 &lt;&lt;if $dingjia[$b]&gt;=50&gt;&gt;&lt;&lt;set $dingjiaxishu=0&gt;&gt;&lt;&lt;elseif $dingjia[$b]&gt;=20&gt;&gt;&lt;&lt;set $dingjiaxishu=1&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $dingjiaxishu=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $chushixiaoliangxishu[$b]=$fengmianzhiliang*0.25*0.3+$dingjiaxishu*0.5*0.2+$paibanzhiliang*0.3*0.1+$gongyi*0.5*0.1+$qiuyueguest*0.1&gt;&gt;
@@ -10386,7 +10383,7 @@ END：在风口上猪都能飞起来
 &lt;&lt;set $yushoushuliang[$b]+=$chushixiaoliang[$b]&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="699" name="现货每日销量计算" tags="nobr widget" position="3100,6200" size="100,100">&lt;&lt;widget &quot;xianhuomeirixiaoliangjisuan&quot;&gt;&gt;
 &lt;&lt;set _suijixiaoliang to (0,5)&gt;&gt;
-&lt;&lt;if $benziyuliang[_i]&lt;=Math.trunc((1+$renqi*0.001)*($chushixiaoliangxishu[_i]+_suijixiaoliang*0.1))&gt;&gt;&lt;&lt;set $yishoushuliang[_i]+=$benziyuliang[_i]&gt;&gt;&lt;&lt;set $benziyuliang[_i]=0&gt;&gt;
+&lt;&lt;if $benziyuliang[_i]&lt;=Math.trunc((1+$renqi*0.001)*($chushixiaoliangxishu[_i]+_suijixiaoliang*0.1))&gt;&gt;&lt;&lt;set $yishoushuliang[_i]+=$benziyuliang[_i]&gt;&gt;&lt;&lt;set $wanshou[_i]=1&gt;&gt;&lt;&lt;set $benziyuliang[_i]=0&gt;&gt;
 &lt;&lt;else&gt;&gt;&lt;&lt;set $benziyuliang[_i]-=Math.trunc((1+$renqi*0.001)*($chushixiaoliangxishu[_i]+_suijixiaoliang*0.1))&gt;&gt;
 &lt;&lt;set $yishoushuliang[_i]+=Math.trunc((1+$renqi*0.001)*($chushixiaoliangxishu[_i]+_suijixiaoliang*0.1))&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -10394,15 +10391,21 @@ END：在风口上猪都能飞起来
 &lt;&lt;set _suijixiaoliang to (0,5)&gt;&gt;
 &lt;&lt;set $yushoushuliang[_i]+=Math.trunc((1+$renqi*0.001)*($chushixiaoliangxishu[_i]+_suijixiaoliang*0.1))&gt;&gt;
 &lt;&lt;set $yushouqi[_i]-=$day&gt;&gt;
+&lt;&lt;if $dahuozhuangtai==&quot;未开始&quot;&gt;&gt;
+&lt;&lt;elseif $dahuozhuangtai==&quot;运往店铺&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
 &lt;&lt;if $benshu[_i]-$yushoushuliang[_i]&lt;0 and $maichaole[_i]==0&gt;&gt;&lt;&lt;set $maichaole[_i]=1&gt;&gt;&lt;&lt;set $yushoushuliang[_i]=$benshu[_i]&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $yushouqi[_i]==0 and $dahuodaili[_i]==0&gt;&gt;&lt;&lt;set $yushouguoqi[_i]=1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="701" name="本子销售" tags="widget nobr" position="2900,6150" size="100,100">&lt;&lt;widget &quot;benzixiaoshou&quot;&gt;&gt;
 &lt;&lt;for _i to 0; _i lt $book; _i++&gt;&gt;
+&lt;&lt;if $wanshou[_i]==0&gt;&gt;
 &lt;&lt;if $yushouzhuangtai[_i]==&quot;已开始&quot;&gt;&gt;
 &lt;&lt;yushoumeirixiaoliangjisuan&gt;&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;现货发售&quot;&gt;&gt;
 &lt;&lt;xianhuomeirixiaoliangjisuan&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="702" name="预售延期通知" tags="nobr widget" position="3400,6100" size="100,100">&lt;&lt;widget &quot;yushouyanqi&quot;&gt;&gt;
@@ -10702,10 +10705,12 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $gouwuopen==0&gt;&gt;这里空空的，你想用点什么来装饰一下。哦对了，你可以买谷啊！&lt;br&gt;
 &lt;&lt;set $gouwuopen=1&gt;&gt;行动中添加了【买谷】选项。&lt;br&gt;
 &lt;&lt;else&gt;&gt;
-你看着房间里花了$maimaimai元买下的谷子，不由得露出了满意的微笑。&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $maimaimai&gt;0&gt;&gt;你看着房间里花了$maimaimai元买下的谷子，不由得露出了满意的微笑。&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qiuyuebenzi==4 and $cishu&gt;0&gt;&gt;
 秋月送你的同人本放在你的书架上。[[看秋月的同人本|阅读]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hezhifashou==2&gt;&gt;你参与的合志放在你的书架上。[[查看合志]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="730" name="查看合志" tags="" position="425,5525" size="100,100">这是你和$cp圈内众人一起努力的结果，看到大家的同人图和同人文，你的心中产生了想搞一辈子$cp的念头。
 [[返回|查看宿舍]]</tw-passagedata><tw-passagedata pid="731" name="亲友本赠送" tags="nobr" position="4600,4800" size="100,100">&lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0&gt;&gt;
 你留下了一些本子准备送亲友。&lt;br&gt;
