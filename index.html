@@ -3833,6 +3833,8 @@ Setting.addList("fontSize", {
     &lt;&lt;set $xiayiben=$book&gt;&gt;
     &lt;&lt;set $jiayin=0&gt;&gt;
     &lt;&lt;set $jiayingongqi=0&gt;&gt;
+        &lt;&lt;set $paibangongqi=0&gt;&gt;
+    &lt;&lt;set $jiaoduigongqi=0&gt;&gt;
     &lt;&lt;set $jiayinzhuangtai=&quot;未开始&quot;&gt;&gt;
 &lt;&lt;set $lianwencishu=0&gt;&gt;
 &lt;&lt;set $hezhiyaoqing=0&gt;&gt;
@@ -9611,14 +9613,14 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $daili&gt;0 and $kaishou==0&gt;&gt;[[联络代理]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[返回|快乐同人女]]
 </tw-passagedata><tw-passagedata pid="600" name="无料（正式流程）" tags="" position="2600,5675" size="100,100">对同人本来说，无料不是必须的，但你可以准备。
-目前的无料：&lt;&lt;if $shuqian&gt;0&gt;&gt;明信片&lt;&lt;/if&gt;&gt; &lt;&lt;if $mingxinpian&gt;0&gt;&gt;书签&lt;&lt;/if&gt;&gt;
+目前的无料：&lt;&lt;if $shuqian&gt;0&gt;&gt;书签&lt;&lt;/if&gt;&gt; &lt;&lt;if $mingxinpian&gt;0&gt;&gt;明信片&lt;&lt;/if&gt;&gt;
 请选择你想要的无料种类：
 &lt;&lt;if $shuqian==0&gt;&gt;[[书签]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $mingxinpian==0&gt;&gt;[[明信片]]&lt;&lt;/if&gt;&gt;
 [[返回|材料准备]]</tw-passagedata><tw-passagedata pid="601" name="内页（正式流程）" tags="nobr" position="2000,4900" size="100,100">你可以选择追加未公开文章和guest，确定文本内容后再进行校对和排版。当然，你也可以跳过你认为不必要的流程，直接进行排版工作。&lt;br&gt;
 目前本子的内容如下：&lt;br&gt;
 总字数$zongzishu[$b]万字，收录$tedian篇特典，$guest篇guest，预计页数$yeshu[$b]P。&lt;br&gt;
-校对：$jiaoduizhuangtai&lt;br&gt;&lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$jiaoduigongqi天。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+校对：$jiaoduizhuangtai&lt;br&gt;&lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $jiaoduigongqi&gt;0&gt;&gt;，剩余$jiaoduigongqi天。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 排版：$paibanzhuangtai&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$paibangongqi天。&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -10127,6 +10129,7 @@ END：在风口上猪都能飞起来
     &lt;&lt;set $jiaoduizhiliang=0&gt;&gt;
     &lt;&lt;set $xuepaiban=0&gt;&gt;
     &lt;&lt;set $paibanzhiliang=0&gt;&gt;
+    
     &lt;&lt;set $paibanjiaogao=0&gt;&gt;
     &lt;&lt;set $jiaoduijiage=0&gt;&gt;
     &lt;&lt;set $paibanjiage=0&gt;&gt;
@@ -10158,6 +10161,8 @@ END：在风口上猪都能飞起来
     &lt;&lt;set $dahuodaili=[0,0,0,0,0,0,0,0,0,0,0,0]&gt;&gt;
     &lt;&lt;set $jiayindaohuo=[0,0,0,0,0,0,0,0,0,0,0,0]&gt;&gt;
     &lt;&lt;set $dahuodaohuo=0&gt;&gt;
+    &lt;&lt;set $paibangongqi=0&gt;&gt;
+    &lt;&lt;set $jiaoduigongqi=0&gt;&gt;
     &lt;&lt;set $dahuozhuangtai=&quot;未开始&quot;&gt;&gt;
     &lt;&lt;set $dahuogongqi=0&gt;&gt;
     &lt;&lt;set $dingjiaxishu=0&gt;&gt;
