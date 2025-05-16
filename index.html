@@ -2012,13 +2012,15 @@ Setting.addList("fontSize", {
 加油吧小文手！
 [[睡觉进入下一天|第二天][$day+=1,$cishu=3]]</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="nobr autosave" position="300,500" size="100,100">&lt;&lt;if $day&gt;=365&gt;&gt;
 时光荏苒，转眼间你在$cp圈的日子已经过了一年。&lt;br&gt;
-[[结局]]
+&lt;&lt;zongshujishu&gt;&gt;
+[[结局]]&lt;br&gt;
 &lt;&lt;elseif $reqing &lt;= 0&gt;&gt;
 好了，你受够这一切了！你对$cp的爱已经在日复一日的焦虑中消磨殆尽了。&lt;br&gt;
 你再也不想提笔写$cp的故事，甚至再也不想见到与之相关的一切。&lt;br&gt;
 这样不是再正常不过了吗？又有几人能数十年如一日地只爱着一对cp呢？&lt;br&gt;
 你的同人女生涯就到此结束了。&lt;br&gt;
-[[结算页面]]
+&lt;&lt;zongshujishu&gt;&gt;
+[[结算页面]]&lt;br&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $jidu&gt;0 and $gouwuopen==0&gt;&gt;
 呀！你正处于嫉妒状态之中。嫉妒会让你每日压力+1，并且在社交之中产生更多负面情绪。&lt;br&gt;
@@ -3848,13 +3850,14 @@ Setting.addList("fontSize", {
    &lt;&lt;set $aizhuanshengbeizhua=0&gt;&gt;
     &lt;&lt;set $tuogaozhuanshengbeizhua=0&gt;&gt;
    
- &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="就这样结束" tags="" position="3600,375" size="100,100">好了，好了，差不多得了。
-就算是再爱$cp，也总有厌倦的一天。
-你再也不想为爱发电了，再也不想掺和进同人圈没完没了的破事里了！
-这个同人女谁爱当谁当，老娘不干了！
+ &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="就这样结束" tags="nobr" position="3600,375" size="100,100">好了，好了，差不多得了。&lt;br&gt;
+就算是再爱$cp，也总有厌倦的一天。&lt;br&gt;
+你再也不想为爱发电了，再也不想掺和进同人圈没完没了的破事里了！&lt;br&gt;
+这个同人女谁爱当谁当，老娘不干了！&lt;br&gt;
 
-END：老娘不干了！
-[[结算页面]]</tw-passagedata><tw-passagedata pid="153" name="特殊日期提醒" tags="nobr widget" position="4900,100" size="100,100">&lt;&lt;widget &quot;teshuriqi&quot;&gt;&gt;
+END：老娘不干了！&lt;br&gt;
+&lt;&lt;zongshujishu&gt;&gt;
+[[结算页面]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="153" name="特殊日期提醒" tags="nobr widget" position="4900,100" size="100,100">&lt;&lt;widget &quot;teshuriqi&quot;&gt;&gt;
 &lt;&lt;if $day==5&gt;&gt;&lt;&lt;jinianriwenan1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $day==35&gt;&gt;&lt;&lt;zhounianjinianriwenan1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $day==65&gt;&gt;&lt;&lt;qingrenjiewenan1&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -4648,7 +4651,7 @@ END：老娘不干了！
 
 不过，当你踏上画画这条道路之后，才发现这条路也同样布满荆棘和迷雾，热度焦虑也从未放过身为画手的你……
 好了，你身为文手的生涯到此结束了，是时候开启新的故事啦！
-
+&lt;&lt;zongshujishu&gt;&gt;
 END：写文救不了同人女
 [[结算页面]]</tw-passagedata><tw-passagedata pid="173" name="三十年河东三十年河西，莫欺少年穷" tags="" position="6675,725" size="100,100">三十年河东，三十年河西！今日你对我爱答不理，明天我让你高攀不起！
 你决定潜心修炼文笔，成为名震天下的大作家，这下看谁还敢忽视你的文！
@@ -4855,6 +4858,7 @@ END：写文救不了同人女
 你最终远离了同人圈，至于你会不会继续在别处兴风作浪，那就是另一个故事了……
 
 END：莫伸手，伸手必被抓
+&lt;&lt;zongshujishu&gt;&gt;
 [[结算页面]]</tw-passagedata><tw-passagedata pid="193" name="诚恳道歉（骂人被抓）" tags="nobr" position="3700,225" size="100,100">你诚恳地为自己的行为道了歉。&lt;br&gt;
 &lt;&lt;if $renqi&gt;=300&gt;&gt;
 你都道歉了，还要怎么样？一部分人偃旗息鼓了，剩余抓着你错处不放的人被仍然拥护你的粉丝包围了。评论和转发一边倒地转向了你，这就是当今的互联网：不论对错，只看谁的声音大！&lt;br&gt;
@@ -5139,6 +5143,7 @@ END：莫伸手，伸手必被抓
 你最终远离了同人圈，至于你会不会继续在别处兴风作浪，那就是另一个故事了……
 
 END：莫伸手，伸手必被抓
+&lt;&lt;zongshujishu&gt;&gt;
 [[结算页面]]</tw-passagedata><tw-passagedata pid="218" name="我就用ai写文了你能把我怎么样！" tags="" position="3900,1900" size="100,100">等一下，就算是用了ai，又能怎么样？
 就算你用ai写文又怎么样？你没有违法，没有犯罪呀！
 而且，也有很多人爱看呀！那些用ai生成的同人文，不是也有大把大把的人要看吗？
@@ -5162,7 +5167,7 @@ ai只是工具，是解放人类生产力的工具啊！
 哈哈，同人圈只不过是一群同人女的过家家。你的心思活络起来：既然ai的生产力这么高，我为什么不用ai赚点钱呢？
 
 END：快进到AI卖课（喂！AI生成内容必须打水印的法律什么时候生效啊！！！！）
-
+&lt;&lt;zongshujishu&gt;&gt;
 [[结算页面]]</tw-passagedata><tw-passagedata pid="219" name="乘胜追击" tags="" position="4100,1625" size="100,100">你乘胜追击，抨击对方空口鉴ai，压缩文手生存空间，要求对方公开道歉。
 你的粉丝当然会支持你，当然，是没能发觉真相的那些。毕竟大家时间有限，谁有心情仔细看完挂人条里的证据？
 一时间，这起事件闹得沸沸扬扬，你以胜利者的姿态，接受了对方的公开道歉。作为空口鉴ai的受害者，你也赚足了流量和眼球……
@@ -5767,7 +5772,7 @@ ai写文不得好死！&lt;br&gt;
 [[返回|玩智能手机]]&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="266" name="结算页面" tags="" position="500,200" size="100,100">你一共当了$day天的同人女，使用过$reborn个账号。
 你一共为$cp写了$tongrenzong篇同人。
-使用热门题材$rementicaizong次，擦边$cabianzong次，上高速$kaichezong次，使用热梗$regengzong次，转发给朋友$cengzhuanfazong次，使用ai$aizong次，抄袭$chaoxizong次。
+使用热门题材$rementicaizong次，擦边$cabianzong次，上高速$kaichezong次，使用热梗$regengzong次，转发给朋友$zhuanfazong次，使用ai$aizong次，抄袭$chaoxizong次。
 你在买谷上花了$maimaimai元。
 你一共参加过$canjiahuodong个24h活动。
 你总共接稿$jiegaozongshuliang次，成功完成的有$wanchengshuliang次。
@@ -7128,6 +7133,7 @@ Just do it！&lt;br&gt;
   })&gt;&gt;
 &lt;&lt;set $reborn += 1&gt;&gt;
 &lt;&lt;set $busixin = 0&gt;&gt;
+&lt;&lt;set $cabianzong+=$cabiancishu&gt;&gt;
 &lt;&lt;set $cabiancishu=0&gt;&gt;
 &lt;&lt;set $renqi=Math.trunc($renqi*0.5)&gt;&gt;
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="431" name="接稿赚钱" tags="" position="2800,3200" size="100,100">你准备开始接稿赚钱了。&lt;&lt;set $jiegaoopen=2&gt;&gt;
@@ -7757,7 +7763,7 @@ Just do it！&lt;br&gt;
 文稿不好骗，你就干脆盗图去骗画稿，你偷别人的oc当设子卖掉，用ai过了兰花谷美美接稿，直到你被受害者联名起诉，在法庭上悔不当初……
 
 END：要是当初没有跑单的话……
-
+&lt;&lt;zongshujishu&gt;&gt;
 [[结算页面]]</tw-passagedata><tw-passagedata pid="474" name="小斧头交稿ai" tags="nobr" position="3000,3725" size="100,100">你把稿件交给了单主，忐忑不安地等待回复。&lt;br&gt;
 &lt;&lt;set _aigao to random(1,3)&gt;&gt;
 &lt;&lt;switch _aigao&gt;&gt;
@@ -7893,7 +7899,7 @@ ai只是工具，是解放人类生产力的工具啊！
 笑话，写ai稿件能赚几个钱，还是卖课来钱快！
 
 END：喂！AI生成内容必须打水印的法律什么时候生效啊！！！！
-
+&lt;&lt;zongshujishu&gt;&gt;
 [[结算页面]]</tw-passagedata><tw-passagedata pid="483" name="ai被抓结局（接稿）" tags="" position="3125,4225" size="100,100">既然在同人圈骗不到钱，你打算换一条赛道。反正，人傻钱多的家伙有的是，有了ai这个工具，赚点钱还不是手拿把掐的？
 于是，你踏上了用ai捞钱的道路，你相信这是一条康庄大道。
 
@@ -9656,7 +9662,7 @@ END：在风口上猪都能飞起来
 你现在还没有宣传图。&lt;br&gt;
 宣传图状态：$xuantuzhuangtai
 &lt;&lt;if $xuantugongqi&gt;0&gt;&gt;，剩余$xuantugongqi天。&lt;&lt;/if&gt;&gt;&lt;br&gt;
-[[准备宣传图]]&lt;br&gt;
+&lt;&lt;if $xuantuzhuangtai==&quot;画师制作中&quot;&gt;0&gt;&gt;&lt;&lt;else&gt;&gt;[[准备宣传图]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 现在你可以发图宣传了！&lt;br&gt;
 [[进行宣发]]&lt;br&gt;
@@ -11103,6 +11109,15 @@ UI.restart();
 但也正是这样普普通通的我们，组成了这个圈子的全部。&lt;br&gt;
 为自己而感到骄傲吧！&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="748" name="总数计数" tags="nobr widget" position="1000,175" size="100,100">&lt;&lt;widget &quot;zongshujishu&quot;&gt;&gt;
+&lt;&lt;set $rementicaizong+=$rementicaicishu&gt;&gt;
+&lt;&lt;set $tongrenzong+=$tongren&gt;&gt;
+&lt;&lt;set $cabianzong+=$cabiancishu&gt;&gt;
+&lt;&lt;set $kaichezong+=$kaiche&gt;&gt;
+&lt;&lt;set $regengzong+=$regengcishu&gt;&gt;
+&lt;&lt;set $zhuanfazong+=$cengzhuanfacishu&gt;&gt;
+&lt;&lt;set $aizong+=$aicishu&gt;&gt;
+&lt;&lt;set $chaoxizong+=$chaoxitongji&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
