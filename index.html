@@ -1512,6 +1512,7 @@ Setting.addList("fontSize", {
 &lt;&lt;set $chaoxicishu=0&gt;&gt;/*抄袭次数*/
 &lt;&lt;set $chaoxibeizhua=0&gt;&gt;
 &lt;&lt;set $chaoxitaotuo=0&gt;&gt;/*抄袭逃脱*/
+&lt;&lt;set $chaoxitongji=0&gt;&gt;
 
 
 /*干了坏事之后小北的差分对话*/
@@ -1670,6 +1671,24 @@ Setting.addList("fontSize", {
    &lt;&lt;set $aizhuanshengbeizhua=0&gt;&gt;
     &lt;&lt;set $tuogaozhuanshengbeizhua=0&gt;&gt;
      &lt;&lt;set $zhuanshengbeizhua=0&gt;&gt;
+ /*总计数*/
+ &lt;&lt;set $rementicaizong=0&gt;&gt;
+  &lt;&lt;set $tongrenzong=0&gt;&gt;
+  &lt;&lt;set $cabianzong=0&gt;&gt;
+&lt;&lt;set $kaichezong=0&gt;&gt;
+&lt;&lt;set $regengzong=0&gt;&gt;
+&lt;&lt;set $zhuanfazong=0&gt;&gt;
+&lt;&lt;set $aizong=0&gt;&gt;
+&lt;&lt;set $zuigaorenqi=0&gt;&gt;
+&lt;&lt;set $zuigaoredu=0&gt;&gt;
+&lt;&lt;set $chaoxizong=0&gt;&gt;
+&lt;&lt;set $yuewenpingcishu=0&gt;&gt;
+&lt;&lt;set $canjiahuodong=0&gt;&gt;
+&lt;&lt;set $tongrenxiaoshouzongshu=0&gt;&gt;
+&lt;&lt;set $wanshoushuliang=0&gt;&gt;
+&lt;&lt;set $jiegaozongshuliang=0&gt;&gt;
+&lt;&lt;set $wanchengshuliang=0&gt;&gt;
+&lt;&lt;set $zhimingsiji=0&gt;&gt;
  /*上述数值已经计入二周目初始化了，要是再新增数值记得在这里的下面增加*/
  
 
@@ -1991,7 +2010,10 @@ Setting.addList("fontSize", {
 你不由得开始幻想，要是你也能拥有一本自己的同人本该多好？
 这似乎对于现在的你来说是遥不可及的事，不过今后的你一定可以做到！
 加油吧小文手！
-[[睡觉进入下一天|第二天][$day+=1,$cishu=3]]</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="nobr autosave" position="300,500" size="100,100">&lt;&lt;if $reqing &lt;= 0&gt;&gt;
+[[睡觉进入下一天|第二天][$day+=1,$cishu=3]]</tw-passagedata><tw-passagedata pid="20" name="第二天" tags="nobr autosave" position="300,500" size="100,100">&lt;&lt;if $day&gt;=365&gt;&gt;
+时光荏苒，转眼间你在$cp圈的日子已经过了一年。&lt;br&gt;
+[[结局]]
+&lt;&lt;elseif $reqing &lt;= 0&gt;&gt;
 好了，你受够这一切了！你对$cp的爱已经在日复一日的焦虑中消磨殆尽了。&lt;br&gt;
 你再也不想提笔写$cp的故事，甚至再也不想见到与之相关的一切。&lt;br&gt;
 这样不是再正常不过了吗？又有几人能数十年如一日地只爱着一对cp呢？&lt;br&gt;
@@ -2185,7 +2207,7 @@ Setting.addList("fontSize", {
     	&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	反正你是抄的，热度高就是你赚了，热度低也没关系，再抄一篇就是了。&lt;br&gt;
-    &lt;&lt;set $chaoxicishu+=1&gt;&gt;&lt;&lt;set $daode-=1&gt;&gt;
+    &lt;&lt;set $chaoxicishu+=1&gt;&gt;&lt;&lt;set $chaoxitongji+=1&gt;&gt;&lt;&lt;set $daode-=1&gt;&gt;
     &lt;&lt;if $redu&gt;=200&gt;&gt;看到文章热度这么高，你十分开心。&lt;br&gt;压力-2&lt;br&gt;&lt;&lt;set $yali-=2&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="社恐，还是算了" tags="" position="2375,250" size="100,100">相逢未必要相识，你决定不和对方搭话。
@@ -3521,7 +3543,6 @@ Setting.addList("fontSize", {
     &lt;&lt;if $jiegaoopen==1&gt;&gt;[[接稿赚钱]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;if $jiegaoopen==2&gt;&gt;[[接稿赚钱|接稿]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     [[查看宿舍]]&lt;br&gt;
-    &lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0 and $dahuodaili[$zengsongbianhao]==2&gt;&gt;[[把本子送给亲友|亲友本赠送]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
     [[睡觉]]&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="146" name="被挂了（因为骂人）" tags="nobr widget" position="3575,100" size="100,100">&lt;&lt;widget &quot;beiguale&quot;&gt;&gt;
 &lt;&lt;if $daguaren==0&gt;&gt;
@@ -3582,6 +3603,14 @@ Setting.addList("fontSize", {
   &lt;&lt;set $reborn += 1&gt;&gt;
   &lt;&lt;shuzhichushihua&gt;&gt;
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="151" name="数值初始化" tags="nobr widget" position="3000,100" size="100,100">&lt;&lt;widget &quot;shuzhichushihua&quot;&gt;&gt;
+     &lt;&lt;set $rementicaizong+=$rementicaicishu&gt;&gt;
+  &lt;&lt;set $tongrenzong+=$tongren&gt;&gt;
+  &lt;&lt;set $cabianzong+=$cabiancishu&gt;&gt;
+&lt;&lt;set $kaichezong+=$kaiche&gt;&gt;
+&lt;&lt;set $regengzong+=$regengcishu&gt;&gt;
+&lt;&lt;set $zhuanfazong+=$cengzhuanfacishu&gt;&gt;
+&lt;&lt;set $aizong+=$aicishu&gt;&gt;
+&lt;&lt;set $chaoxizong+=$chaoxitongji&gt;&gt;
 /* 行动次数 */ 
 &lt;&lt;set $cishu=3&gt;&gt;
 /* 写同人篇数 */ 
@@ -3630,6 +3659,7 @@ Setting.addList("fontSize", {
 &lt;&lt;set $chaoxicishu=0&gt;&gt;/*抄袭次数*/
 &lt;&lt;set $chaoxibeizhua=0&gt;&gt;
 &lt;&lt;set $chaoxitaotuo=0&gt;&gt;/*抄袭逃脱*/
+&lt;&lt;set $chaoxitongji=0&gt;&gt;
 
 /*干了坏事之后小北的差分对话*/
 &lt;&lt;set $chaoxibeizhuaxiaobei=0&gt;&gt;
@@ -3815,6 +3845,7 @@ Setting.addList("fontSize", {
   &lt;&lt;set $chaoxizhuanshengbeizhua=0&gt;&gt;
    &lt;&lt;set $aizhuanshengbeizhua=0&gt;&gt;
     &lt;&lt;set $tuogaozhuanshengbeizhua=0&gt;&gt;
+   
  &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="就这样结束" tags="" position="3600,375" size="100,100">好了，好了，差不多得了。
 就算是再爱$cp，也总有厌倦的一天。
 你再也不想为爱发电了，再也不想掺和进同人圈没完没了的破事里了！
@@ -3839,6 +3870,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen1redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen1redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen1=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3847,6 +3879,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong1redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong1redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong1=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
 	人气+_i&lt;br&gt;
@@ -3857,6 +3890,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen2redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen2redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen2=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3865,6 +3899,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong2redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong2redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong2=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3875,6 +3910,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen3redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen3redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen3=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3883,6 +3919,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong3redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong3redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong3=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3893,6 +3930,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen4redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen4redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen4=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3901,6 +3939,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong4redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong4redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong4=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3911,6 +3950,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen5redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen5redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen5=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3919,6 +3959,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong5redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong5redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong5=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3929,6 +3970,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen6redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen6redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen6=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3937,6 +3979,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong6redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong6redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong6=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3947,6 +3990,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen7redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen7redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen7=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3955,6 +3999,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong7redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong7redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong7=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3965,6 +4010,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen8redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen8redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen8=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3973,6 +4019,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong8redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong8redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong8=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3983,6 +4030,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen9redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen9redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen9=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -3991,6 +4039,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong9redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong9redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong9=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4001,6 +4050,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen10redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen10redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen10=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4009,6 +4059,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong10redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong10redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong10=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4019,6 +4070,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen11redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen11redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen11=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4027,6 +4079,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong11redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong11redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong11=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4037,6 +4090,7 @@ END：老娘不干了！
     &lt;&lt;lianwenwenan1&gt;&gt;$lianwen12redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($lianwen12redu*0.1)+1&gt;&gt;
     &lt;&lt;set $lianwen12=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -4045,6 +4099,7 @@ END：老娘不干了！
     &lt;&lt;jielongwenan1&gt;&gt;$jielong12redu。&lt;br&gt;
     &lt;&lt;set _i=Math.trunc($jielong12redu*0.1)+1&gt;&gt;
     &lt;&lt;set $jielong12=3&gt;&gt;
+    &lt;&lt;set $canjiahuodong+=1&gt;&gt;
     &lt;&lt;set $mingsheng+=5&gt;&gt;
 	&lt;&lt;set $renqi+=_i&gt;&gt;
     人气+_i&lt;br&gt;
@@ -5709,11 +5764,15 @@ ai写文不得好死！&lt;br&gt;
 然后她拉黑了你。&lt;br&gt;&lt;&lt;set $qiuyueliaotian=-1&gt;&gt;
 [[返回|玩智能手机]]&lt;br&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="266" name="结算页面" tags="" position="500,200" size="100,100">你一共当了$day天的同人女，使用过$reborn个账号。
-在$player账号上，你一共为$cp写了$tongren篇同人。
-使用热门题材$rementicaicishu次，擦边$cabiancishu次，上高速$kaiche次，使用热梗$regengcishu次，转发给朋友$cengzhuanfacishu次，使用ai$aicishu次。
+你一共为$cp写了$tongrenzong篇同人。
+使用热门题材$rementicaizong次，擦边$cabianzong次，上高速$kaichezong次，使用热梗$regengzong次，转发给朋友$cengzhuanfazong次，使用ai$aizong次，抄袭$chaoxizong次。
 你在买谷上花了$maimaimai元。
-你获得了$renqi人气，最终的写作等级为$xiezuodengji级。
+你一共参加过$canjiahuodong个24h活动。
+你总共接稿$jiegaozongshuliang次，成功完成的有$wanchengshuliang次。
+你一共筹备过$book本同人，其中有$wanshoushuliang本完售，总共卖出了$tongrenxiaoshouzongshu本。
+你获得的最高人气为$zuigaorenqi，最高热度为$zuigaoredu，最终的写作等级为$xiezuodengji级。
 
+&lt;strong&gt;您最终获得的称号为：&lt;&lt;chenghaojisuan&gt;&gt;&lt;/strong&gt;
 重新开始游戏吧。
 &lt;&lt;link &quot;重新开始&quot; &gt;&gt;&lt;br&gt;
 &lt;&lt;script&gt;&gt;
@@ -5848,9 +5907,9 @@ UI.restart();
 [[返回|快乐同人女]]&lt;br&gt;
 </tw-passagedata><tw-passagedata pid="292" name="约文评" tags="nobr" position="1700,350" size="100,100">你准备给自己约文评。&lt;br&gt;
 你可以从以下不同的价格档位中选择，但文评市场良莠不齐，小心踩坑。&lt;br&gt;
-&lt;&lt;if $money&gt;=20&gt;&gt;[[20元/次]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $money&gt;=50&gt;&gt;[[50元/次]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $money&gt;=100&gt;&gt;[[100元/次]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $money&gt;=20&gt;&gt;[[20元/次][$yuewenpingcishu+=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $money&gt;=50&gt;&gt;[[50元/次][$yuewenpingcishu+=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $money&gt;=100&gt;&gt;[[100元/次][$yuewenpingcishu+=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[返回|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="293" name="StoryDisplayTitle" tags="nobr" position="2200,50" size="100,100">&lt;&lt;if $jidu&gt;0&gt;&gt;
 同人女恨同人&lt;br&gt;
 &lt;&lt;else&gt;&gt;
@@ -7028,7 +7087,7 @@ Just do it！&lt;br&gt;
 你把文章发到了知名同人网站BQ4上。&lt;br&gt;
 &lt;&lt;if $dengji==&quot;钻石级&quot;&gt;&gt;
 你写得太好了。如此神文横空出世，虽说BQ4上的文很难传播，但一传十，十传百，你的这篇同人成了镇圈神文，受到顶礼膜拜。&lt;br&gt;&lt;&lt;set $cheshouzhimingdu+=100&gt;&gt;
-人气+100，热情+1&lt;&lt;set $renqi+=100&gt;&gt;&lt;&lt;set $reqing+=1&gt;&gt;&lt;br&gt;
+人气+100，热情+1&lt;&lt;set $renqi+=100&gt;&gt;&lt;&lt;set $reqing+=1&gt;&gt;&lt;&lt;set $zhimingsiji=1&gt;&gt;&lt;br&gt;
 &lt;&lt;elseif $cheshouzhimingdu&gt;=100&gt;&gt;
 你现在已经是小有名气的司机了。文章一发，就有鱼儿们纷纷上钩，直呼要看后续。
 你大为满足。&lt;br&gt;&lt;&lt;set $cheshouzhimingdu+=50&gt;&gt;
@@ -7192,7 +7251,7 @@ Just do it！&lt;br&gt;
 [[我再想想|快乐同人女]]&lt;br&gt;
 &lt;&lt;/switch&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="436" name="确认接稿" tags="nobr" position="3800,3100" size="100,100">你接了稿，记得在期限内完成哦！&lt;br&gt;
-行动【写稿】开启，可以在【接稿赚钱】中进行。&lt;br&gt;&lt;&lt;set $jiegaoshuliang=1&gt;&gt;&lt;&lt;set $jiegaocishu+=1&gt;&gt;&lt;&lt;set $gaojia1=$gaojia&gt;&gt;
+行动【写稿】开启，可以在【接稿赚钱】中进行。&lt;br&gt;&lt;&lt;set $jiegaoshuliang=1&gt;&gt;&lt;&lt;set $jiegaocishu+=1&gt;&gt;&lt;&lt;set $gaojia1=$gaojia&gt;&gt;&lt;&lt;set $jiegaozongshuliang+=1&gt;&gt;
 &lt;&lt;if $pingtai==1&gt;&gt;单主提前支付了定金。&lt;br&gt;
 零用钱+$dingjin&lt;br&gt;&lt;&lt;set $money+=$dingjin&gt;&gt;&lt;&lt;/if&gt;&gt;
 [[返回|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="437" name="接稿" tags="nobr" position="2800,3300" size="100,100">&lt;&lt;if $jiegaoshuliang==0&gt;&gt;
@@ -7304,6 +7363,7 @@ Just do it！&lt;br&gt;
 单主对你的稿件很满意，痛快地付了全款！&lt;br&gt;
 好评+1&lt;br&gt;
 零用钱+$shouyi&lt;br&gt;
+&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $money-=$dingjin&gt;&gt;
 &lt;&lt;set $money+=$shouyi&gt;&gt;
 &lt;&lt;set $haoping+=3&gt;&gt;
@@ -7322,6 +7382,7 @@ Just do it！&lt;br&gt;
 单主什么都没说，把尾款转给你了。&lt;br&gt;
 差评+1&lt;br&gt;
 零用钱+$shouyi&lt;br&gt;
+&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $money-=$dingjin&gt;&gt;
 &lt;&lt;set $money+=$shouyi&gt;&gt;
 &lt;&lt;set $haoping-=3&gt;&gt;
@@ -7506,7 +7567,7 @@ Just do it！&lt;br&gt;
 &lt;&lt;case 1&gt;&gt;
 你们扯皮了半天，单主松口了，把尾款付给了你。&lt;br&gt;
 差评+1&lt;br&gt;&lt;&lt;set $haoping-=3&gt;&gt;&lt;&lt;set $money-=$dingjin&gt;&gt;&lt;&lt;set $money+=$shouyi&gt;&gt;
-&lt;&lt;set $jiegaoshuliang=0&gt;&gt;&lt;&lt;set $aixiegao=0&gt;&gt;
+&lt;&lt;set $jiegaoshuliang=0&gt;&gt;&lt;&lt;set $aixiegao=0&gt;&gt;&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $ddl=0&gt;&gt;
 &lt;&lt;set $gaigao=0&gt;&gt;
 [[返回|快乐同人女]]&lt;br&gt;
@@ -7537,6 +7598,7 @@ Just do it！&lt;br&gt;
 单主对你的稿件很满意，痛快地收稿了！&lt;br&gt;
 好评+1&lt;br&gt;
 零用钱+$shouyi&lt;br&gt;
+&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $money+=$shouyi&gt;&gt;
 &lt;&lt;set $haoping+=3&gt;&gt;
 &lt;&lt;set $jiegaoshuliang=0&gt;&gt;
@@ -7553,6 +7615,7 @@ Just do it！&lt;br&gt;
 单主什么都没说，把尾款转给你了。&lt;br&gt;
 差评+1&lt;br&gt;
 零用钱+$shouyi&lt;br&gt;
+&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $money+=$shouyi&gt;&gt;
 &lt;&lt;set $haoping-=3&gt;&gt;
 &lt;&lt;set $jiegaoshuliang=0&gt;&gt;
@@ -7583,7 +7646,7 @@ Just do it！&lt;br&gt;
 &lt;&lt;switch _suiji&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
 你们扯皮了半天，单主松口了，总算是收稿了。&lt;br&gt;
-差评+1&lt;br&gt;&lt;&lt;set $haoping-=3&gt;&gt;&lt;&lt;set $money+=$shouyi&gt;&gt;
+差评+1&lt;br&gt;&lt;&lt;set $haoping-=3&gt;&gt;&lt;&lt;set $money+=$shouyi&gt;&gt;&lt;&lt;set $wanchengshuliang+=1&gt;&gt;
 &lt;&lt;set $jiegaoshuliang=0&gt;&gt;
 &lt;&lt;set $ddl=0&gt;&gt;
 &lt;&lt;set $gaigao=0&gt;&gt;&lt;&lt;set $aixiegao=0&gt;&gt;
@@ -9436,7 +9499,7 @@ END：在风口上猪都能飞起来
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="592" name="StatusPanel" tags="nobr" position="300,50" size="100,100">&lt;&lt;if $start&gt;0&gt;&gt;
 &lt;&lt;do&gt;&gt;
 &lt;div class=&quot;status-panel&quot;&gt;
-    &lt;div class=&quot;day-info&quot;&gt;第$day天，零用钱：$money元，产出：$tongren篇，行动点：$cishu&lt;/div&gt;&lt;&lt;qiuyuerenke&gt;&gt;&lt;&lt;xiezuodengji&gt;&gt;
+    &lt;div class=&quot;day-info&quot;&gt;第$day天，零用钱：$money元，产出：$tongren篇，行动点：$cishu&lt;/div&gt;&lt;&lt;qiuyuerenke&gt;&gt;&lt;&lt;xiezuodengji&gt;&gt;&lt;&lt;renqiredujisuan&gt;&gt;
     &lt;&lt;max&gt;&gt;
     &lt;div class=&quot;level-info&quot;&gt;写作&lt;&lt;xiezuotiao&gt;&gt;&lt;/div&gt;
     
@@ -9464,12 +9527,13 @@ END：在风口上猪都能飞起来
     &lt;div class=&quot;deadline-info1&quot;&gt;&lt;&lt;baomingtixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info2&quot;&gt;&lt;&lt;ddltixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info3&quot;&gt;&lt;&lt;hezhiddltixing&gt;&gt;&lt;/div&gt;
+    &lt;div class=&quot;tips&quot;&gt;&lt;&lt;tishiwenben&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;status-text&quot;&gt;&lt;&lt;if $jidu&gt;0&gt;&gt;你正在嫉妒中。&lt;&lt;/if&gt;&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/do&gt;&gt;
   &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="593" name="作者信息" tags="" position="300,150" size="100,100">程序：烤鱼 老白 德牧
 文案：烤鱼
-&lt;a href=&quot;https://www.wolai.com/gffHhGEA8mm9hFxGWm9r9p&quot;&gt;个人主页&lt;/a&gt;
+&lt;a href=&quot;https://www.wolai.com/gffHhGEA8mm9hFxGWm9r9p&quot;&gt;烤鱼的个人主页&lt;/a&gt;
 &lt;a href=&quot;https://afdian.com/a/skgy1428&quot;&gt;打赏通道&lt;/a&gt;</tw-passagedata><tw-passagedata pid="594" name="作弊器" tags="widget nobr" position="150,800" size="100,100">&lt;&lt;widget &quot;zuobiqi&quot;&gt;&gt;
 测试用：&lt;br&gt;
 &lt;&lt;button &quot;开启写作训练&quot;&gt;&gt;&lt;&lt;set $xiezuoxunlianopen=1&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;br&gt;
@@ -10125,7 +10189,9 @@ END：在风口上猪都能飞起来
 &lt;&lt;set $bugou=0&gt;&gt;
 &lt;&lt;set $qinyoubenzengsong=[0,0,0,0,0,0,0,0,0,0,0,0]&gt;&gt;
 &lt;&lt;set $zengsongbianhao=0&gt;&gt;
-&lt;&lt;set $qinyoubenzengsongopen=0&gt;&gt;</tw-passagedata><tw-passagedata pid="662" name="去兰花谷约稿(宣图)" tags="nobr" position="3025,4850" size="100,100">你准备去兰花谷约一个宣传图。&lt;br&gt;
+&lt;&lt;set $qinyoubenzengsongopen=0&gt;&gt;
+&lt;&lt;set $fanbookzhanshi=[0,0,0,0,0,0,0,0,0,0,0,0]&gt;&gt;
+&lt;&lt;set $ziliubenshu=0&gt;&gt;</tw-passagedata><tw-passagedata pid="662" name="去兰花谷约稿(宣图)" tags="nobr" position="3025,4850" size="100,100">你准备去兰花谷约一个宣传图。&lt;br&gt;
 大部分的宣图都在100元上下，排单在7天左右。&lt;br&gt;
 &lt;&lt;if $money&gt;=100&gt;&gt;
 [[付款下单]]&lt;br&gt;
@@ -10379,13 +10445,13 @@ END：在风口上猪都能飞起来
 &lt;&lt;for _i to 0; _i lt $book; _i++&gt;&gt;
 
 &lt;&lt;if $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;
-《$fanbook[_i]》：已下架，最终售出$yishoushuliang[_i]本。&lt;br&gt;
+《$fanbook[_i]》：已下架，最终售出$yishoushuliang[_i]本。&lt;&lt;set $tongrenxiaoshouzongshu+=$yishoushuliang[_i]&gt;&gt;&lt;br&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;
 《$fanbook[_i]》：已完售，最终售出$yishoushuliang[_i]本。&lt;br&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;现货发售&quot;&gt;&gt;
 《$fanbook[_i]》：现货$benziyuliang[_i]本，已售出$yishoushuliang[_i]本。&lt;br&gt;
 &lt;&lt;if $wanshou[_i]==1&gt;&gt;
-本子完售啦！太好了，你的心情变得超级好！&lt;br&gt;&lt;&lt;set $reqing+=3&gt;&gt;&lt;&lt;set $yali-=3&gt;&gt;&lt;&lt;set $jidu=0&gt;&gt;&lt;&lt;set $yushouzhuangtai[_i]=&quot;已完售&quot;&gt;&gt;
+本子完售啦！太好了，你的心情变得超级好！&lt;br&gt;&lt;&lt;set $reqing+=3&gt;&gt;&lt;&lt;set $yali-=3&gt;&gt;&lt;&lt;set $jidu=0&gt;&gt;&lt;&lt;set $yushouzhuangtai[_i]=&quot;已完售&quot;&gt;&gt;&lt;&lt;set $wanshoushuliang+=1&gt;&gt;&lt;&lt;set $tongrenxiaoshouzongshu+=$yishoushuliang[_i]&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已结束&quot;&gt;&gt;
 《$fanbook[_i]》：已售出$yushoushuliang[_i]本。&lt;br&gt;
@@ -10749,7 +10815,7 @@ END：在风口上猪都能飞起来
 主催给参与的大家结了稿费。&lt;br&gt;
 零用钱+200&lt;&lt;set $money+=200&gt;&gt;&lt;br&gt;&lt;&lt;set $hezhiwanshou=2&gt;&gt;
 [[返回|快乐同人女]]&lt;br&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="729" name="查看宿舍" tags="nobr" position="300,5400" size="100,100">这是你的小空间，可以在这里查看你的谷子和其他东西。
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="729" name="查看宿舍" tags="nobr" position="300,5400" size="100,100">这是你的小空间，可以在这里查看你的谷子和其他东西。&lt;br&gt;
 &lt;&lt;if $gouwuopen==0&gt;&gt;这里空空的，你想用点什么来装饰一下。哦对了，你可以买谷啊！&lt;br&gt;
 &lt;&lt;set $gouwuopen=1&gt;&gt;行动中添加了【买谷】选项。&lt;br&gt;
 &lt;&lt;else&gt;&gt;
@@ -10758,21 +10824,24 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $qiuyuebenzi==4 and $cishu&gt;0&gt;&gt;
 秋月送你的同人本放在你的书架上。[[看秋月的同人本|阅读]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hezhifashou==2&gt;&gt;你参与的合志放在你的书架上。[[查看合志]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-
-[[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="730" name="查看合志" tags="" position="425,5525" size="100,100">这是你和$cp圈内众人一起努力的结果，看到大家的同人图和同人文，你的心中产生了想搞一辈子$cp的念头。
+&lt;&lt;if $ziliubenshu&gt;0&gt;&gt;你的同人本放在书架上。[[查看同人本]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0 and $dahuodaili[$zengsongbianhao]==2&gt;&gt;你预留的本子堆在房间里。&lt;br&gt;
+[[处理预留本|亲友本赠送]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+[[返回|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="730" name="查看合志" tags="" position="425,5525" size="100,100">这是你和$cp圈内众人一起努力的结果，看到大家的同人图和同人文，你的心中产生了想搞一辈子$cp的念头。
 [[返回|查看宿舍]]</tw-passagedata><tw-passagedata pid="731" name="亲友本赠送" tags="nobr" position="4600,4800" size="100,100">&lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0&gt;&gt;
-你留下了一些本子准备送亲友。&lt;br&gt;
+你留下了一些本子，可以自己收藏起来，也可以送亲友。&lt;br&gt;
 你现在还剩$qinyouben[$zengsongbianhao]本。&lt;br&gt;
 要送给谁呢？&lt;br&gt;
 &lt;&lt;if $qiuyueguest&gt;0&gt;&gt;秋月给你写了G文，你应该送她一本。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qunzhuguest&gt;0&gt;&gt;紫汐给你写了G文，你应该送她一本。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $maolingbangmang[$zengsongbianhao]&gt;0&gt;&gt;猫羚帮了你不少，你应该送她一本。&lt;br&gt;&lt;&lt;/if&gt;&gt;
+[[自己留一本]]
 &lt;&lt;if $qiuyueliaotian&gt;0&gt;&gt;[[送给秋月][$qinyouben[$zengsongbianhao]-=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $huashou&gt;0&gt;&gt;[[送给猫羚][$qinyouben[$zengsongbianhao]-=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $xiaobei&gt;0&gt;&gt;[[送给小北][$qinyouben[$zengsongbianhao]-=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qunzhuopen&gt;0&gt;&gt;[[送给紫汐][$qinyouben[$zengsongbianhao]-=1]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-你的本子已经送完了。&lt;br&gt;
+你的本子已经处理完了。&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 [[返回|快乐同人女]]</tw-passagedata><tw-passagedata pid="732" name="送给秋月" tags="" position="4600,4925" size="100,100">你把你的《$fanbook[$zengsongbianhao]》送给了秋月。
 【秋月】：哇！谢谢$player老师，我会好好珍藏您的大作！！！
@@ -10922,6 +10991,113 @@ END：在风口上猪都能飞起来
     &lt;&lt;yushouyanqi&gt;&gt;
     &lt;&lt;yejianxingdong&gt;&gt;
     &lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="742" name="提示文本" tags="nobr widget" position="225,925" size="100,100">&lt;&lt;widget &quot;tishiwenben&quot;&gt;&gt;
+提示：
+&lt;&lt;set _tips to random(1,13)&gt;&gt;
+&lt;&lt;switch _tips&gt;&gt;
+&lt;&lt;case 1&gt;&gt;游戏中的种种行为请勿模仿！互联网不是法外之地！&lt;br&gt;
+&lt;&lt;case 2&gt;&gt;嫉妒状态下，每天的压力会增加，并且更容易触发负面事件。&lt;br&gt;
+&lt;&lt;case 3&gt;&gt;热情归零后会迎来游戏结局哦。&lt;br&gt;
+&lt;&lt;case 4&gt;&gt;目前的版本bug还很多，请大家多多包涵……&lt;br&gt;
+&lt;&lt;case 5&gt;&gt;如遇到bug，请录屏或者截图发到群里，感谢！&lt;br&gt;
+&lt;&lt;case 6&gt;&gt;压力达到最大时，每日热情会骤减，一定要注意！&lt;br&gt;
+&lt;&lt;case 7&gt;&gt;冲动消费可以消除嫉妒，部分npc也帮得上忙。&lt;br&gt;
+&lt;&lt;case 8&gt;&gt;更新后会导致旧存档无法使用，请见谅！&lt;br&gt;
+&lt;&lt;case 9&gt;&gt;想提升热度？多多使用“写作技巧”吧！&lt;br&gt;
+&lt;&lt;case 10&gt;&gt;你的朋友们会在很多时候派得上用场。&lt;br&gt;
+&lt;&lt;case 11&gt;&gt;多刷tag，你可能会学到很多。&lt;br&gt;
+&lt;&lt;case 12&gt;&gt;频繁使用某些技巧，可能会导致一些后果。&lt;br&gt;
+&lt;&lt;case 13&gt;&gt;作者需要更多的支持才能坚持下去！拜托大家多鼓励我吧！（最好给我打点钱）（喂）&lt;br&gt;
+&lt;&lt;/switch&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="743" name="结局" tags="important" position="725,325" size="100,100">历经365天，你在同人圈的第一年终于结束啦！
+这一年里，你经历过什么，又体验到了什么？
+同人女的个中滋味，恐怕只有你本人才能说清吧！
+
+在这365天之中，你一共使用过$reborn个账号。
+你一共为$cp写了$tongrenzong篇同人。
+使用热门题材$rementicaizong次，擦边$cabianzong次，上高速$kaichezong次，使用热梗$regengzong次，转发给朋友$zhuanfazong次，使用ai$aizong次，抄袭$chaoxizong次。
+你在买谷上花了$maimaimai元。
+你一共参加过$canjiahuodong个24h活动。
+你总共接稿$jiegaozongshuliang次，成功完成的有$wanchengshuliang次。
+你一共筹备过$book本同人，其中有$wanshoushuliang本完售，总共卖出了$tongrenxiaoshouzongshu本。
+你获得的最高人气为$zuigaorenqi，最高热度为$zuigaoredu，最终的写作等级为$xiezuodengji级。
+
+&lt;strong&gt;您最终获得的称号为：&lt;&lt;chenghaojisuan&gt;&gt;&lt;/strong&gt;
+重新开始游戏吧。
+&lt;&lt;link &quot;重新开始&quot; &gt;&gt;&lt;br&gt;
+&lt;&lt;script&gt;&gt;
+UI.restart();
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="744" name="自己留一本" tags="" position="4475,5050" size="100,100">你自己留下了一本本子。
+&lt;&lt;set $fanbookzhanshi[$zengsongbianhao]+=1&gt;&gt;&lt;&lt;set $ziliubenshu+=1&gt;&gt;
+&lt;&lt;set $qinyouben[$zengsongbianhao]-=1&gt;&gt;
+[[返回|亲友本赠送]]</tw-passagedata><tw-passagedata pid="745" name="查看同人本" tags="nobr" position="300,5525" size="100,100">&lt;&lt;for _i to 0; _i lt $book; _i++&gt;&gt;
+&lt;&lt;if $fanbookzhanshi[_i]&gt;0&gt;&gt;
+《$fanbook[_i]》:总字数$zongzishu[_i]万字，页数$yeshu[_i]P。&lt;br&gt;
+&lt;&lt;/for&gt;&gt;
+看到你的成果，你的心中产生了满满的成就感！&lt;br&gt;
+[[返回|查看宿舍]]</tw-passagedata><tw-passagedata pid="746" name="最高人气热度计算" tags="nobr widget" position="800,175" size="100,100">&lt;&lt;widget &quot;renqiredujisuan&quot;&gt;&gt;
+&lt;&lt;if $renqi&gt;$zuigaorenqi&gt;&gt;
+&lt;&lt;set $zuigaorenqi=$renqi&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $redu&gt;$zuigaoredu&gt;&gt;
+&lt;&lt;set $zuigaoredu=$redu&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="747" name="称号计算" tags="nobr widget" position="900,175" size="100,100">&lt;&lt;widget &quot;chenghaojisuan&quot;&gt;&gt;
+&lt;&lt;if $daguaren&gt;0&gt;&gt;
+超级大瓜人&lt;br&gt;
+无数次转生的洗礼让你练就了比城墙还厚的脸皮，真是服了你了！&lt;br&gt;
+&lt;&lt;elseif $renqi&gt;=10000 and $mingsheng&gt;=50&gt;&gt;
+白月光女神&lt;br&gt;
+产量高，名声好，不愧为圈内的女神级别人物（不含贬义）！你是众人交口称赞的对象，是同人圈冉冉升起的新星！&lt;br&gt;
+&lt;&lt;elseif $renqi&gt;=10000 and $mingsheng&lt;=-50&gt;&gt;
+黑红也是红&lt;br&gt;
+万籁俱寂的深夜里，总有人为你辗转反侧：你这个坏事做尽的家伙怎么还在同人圈蹦跶！&lt;br&gt;
+&lt;&lt;elseif $renqi&gt;=10000&gt;&gt;
+知名太太&lt;br&gt;
+你是圈子里的知名人物，在$cp圈中有自己的一席之地！&lt;br&gt;
+&lt;&lt;elseif $chaoxizong&gt;=50&gt;&gt;
+拿来主义&lt;br&gt;
+管他是谁写的，好词拿来，好句拿来，通通拿来！你是个可耻的抄袭者，可你不以为耻，反以为荣。&lt;br&gt;
+&lt;&lt;elseif $aizong&gt;=50&gt;&gt;
+时代先锋&lt;br&gt;
+你走在时代的前列，是人机艺术边界的开拓者，我编不下去了想骂你两句。不是，到底是谁拿ai当宝？&lt;br&gt;
+&lt;&lt;elseif $canjiahuodong&gt;=12&gt;&gt;
+24h之神&lt;br&gt;
+圈内的活动总少不了你的身影，24h中总有1h是属于你的！&lt;br&gt;
+&lt;&lt;elseif $zhimingsiji&gt;0&gt;&gt;
+秋名山车神&lt;br&gt;
+你真的超会开车！漂移过弯难不倒你！&lt;br&gt;
+&lt;&lt;elseif $jiegaozongcishu&gt;=50&gt;&gt;
+米文手&lt;br&gt;
+接稿，赚钱，赚多多的钱！&lt;br&gt;
+&lt;&lt;elseif $cabianzong&gt;=50&gt;&gt;
+人体描边大师&lt;br&gt;
+你熟知擦边技巧，知道如何不入雷池半步。&lt;br&gt;
+&lt;&lt;elseif $zhuanfazong&gt;=50&gt;&gt;
+一键转发大师&lt;br&gt;
+喂，亲友，我写了文你快看啊！快看啊！不看的话帮我点个红心蓝手也行！&lt;br&gt;
+&lt;&lt;elseif $regengzong&gt;=50&gt;&gt;
+化身meme&lt;br&gt;
+你超爱meme！不管是什么梗，全都好用爱用！&lt;br&gt;
+&lt;&lt;elseif $rementicaizong&gt;=50&gt;&gt;
+我爱观影体&lt;br&gt;
+写同人就是这么简单，你也来试试看吧！&lt;br&gt;
+&lt;&lt;elseif $wanshoushuliang&gt;=3&gt;&gt;
+著作等身&lt;br&gt;
+你一年内竟然完售了这么多同人本，真是吓死同担！&lt;br&gt;
+&lt;&lt;elseif $zuigaoredu&gt;=1000&gt;&gt;
+镇圈太太&lt;br&gt;
+你的镇圈神文在圈内无人不知，无人不晓！&lt;br&gt;
+&lt;&lt;elseif $xiezuodengji&gt;9&gt;&gt;
+满级写手&lt;br&gt;
+你是同人写手里最能打的！&lt;br&gt;
+&lt;&lt;else&gt;&gt;
+文圈小透明&lt;br&gt;
+事实上，这才是最普通也最常见的，属于每个你和每个我的称号。&lt;br&gt;
+但也正是这样普普通通的我们，组成了这个圈子的全部。&lt;br&gt;
+为自己而感到骄傲吧！&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
