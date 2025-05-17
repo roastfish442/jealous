@@ -1692,7 +1692,6 @@ Setting.addList("fontSize", {
 &lt;&lt;set $zhimingsiji=0&gt;&gt;
 
 /*厕所*/
- /*上述数值已经计入二周目初始化了，要是再新增数值记得在这里的下面增加*/
  &lt;&lt;set $zixicesuo=0&gt;&gt;
 &lt;&lt;set $cesuodaojishi=0&gt;&gt;
  &lt;&lt;set $tucaobotopen=0&gt;&gt;
@@ -1700,7 +1699,9 @@ Setting.addList("fontSize", {
 &lt;&lt;set $zhidaotuiwenzixitouce=0&gt;&gt;
 &lt;&lt;set $qunzhucesuo=0&gt;&gt;
 &lt;&lt;set $tuiwenhaoxinxixielou=0&gt;&gt;
-&lt;&lt;set $hezixibaole=0&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="写作等级计算" tags="widget nobr" position="1100,50" size="100,100">&lt;&lt;widget &quot;xiezuodengji&quot;&gt;&gt;/* 写作等级 */ 
+&lt;&lt;set $hezixibaole=0&gt;&gt;
+ /*上述数值已经计入二周目初始化了，要是再新增数值记得在这里的下面增加*/
+</tw-passagedata><tw-passagedata pid="5" name="写作等级计算" tags="widget nobr" position="1100,50" size="100,100">&lt;&lt;widget &quot;xiezuodengji&quot;&gt;&gt;/* 写作等级 */ 
 &lt;&lt;if $xiezuo&gt;=100 and $xiezuodengji==1&gt;&gt;
 &lt;&lt;set $xiezuodengji=2&gt;&gt;&lt;&lt;set $xiezuo-=100&gt;&gt;
 &lt;&lt;elseif $xiezuo&gt;=250 and $xiezuodengji==2&gt;&gt;
@@ -3568,7 +3569,7 @@ Setting.addList("fontSize", {
 	[[写合志正文][$cishu-=2,$linggan-=1]] 灵感-1，行动点-2&lt;br&gt;	
     &lt;&lt;/if&gt;&gt;
         &lt;&lt;xunzhaolinggan&gt;&gt;
-    &lt;&lt;if $cishu&gt;0 and $jiduzhuanhuan&gt;0&gt;&gt;[[将嫉妒转换为灵感]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $cishu&gt;0 and $jiduzhuanhuan&gt;0 and $jidu&gt;0&gt;&gt;[[将嫉妒转换为灵感]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;if $cishu&gt;0 and $gouwuopen&gt;0&gt;&gt;[[买谷]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
     &lt;&lt;if $tongrenbenzhizuo==1 and $tongrenbenchoubeizhong==0&gt;&gt;
     &lt;&lt;if $book&gt;0 and $xiayiben==$book&gt;&gt;[[筹备下一本同人本|筹备同人本]]&lt;br&gt;&lt;&lt;else&gt;&gt;[[筹备同人本]]&lt;br&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -3882,7 +3883,9 @@ Setting.addList("fontSize", {
   &lt;&lt;set $chaoxizhuanshengbeizhua=0&gt;&gt;
    &lt;&lt;set $aizhuanshengbeizhua=0&gt;&gt;
     &lt;&lt;set $tuogaozhuanshengbeizhua=0&gt;&gt;
-   
+   /*厕所*/
+&lt;&lt;set $tuiwenhaoxinxixielou=0&gt;&gt;
+&lt;&lt;set $hezixibaole=0&gt;&gt;
  &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="152" name="就这样结束" tags="nobr" position="3600,375" size="100,100">好了，好了，差不多得了。&lt;br&gt;
 就算是再爱$cp，也总有厌倦的一天。&lt;br&gt;
 你再也不想为爱发电了，再也不想掺和进同人圈没完没了的破事里了！&lt;br&gt;
@@ -6253,7 +6256,7 @@ UI.restart();
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/switch&gt;&gt;
 &lt;&lt;set $cishu-=1&gt;&gt;
-除了推荐人撰写的文案以外，每篇推文下都留下了推文号对这篇文章认真的评论。小北，你是天使吗……&lt;br&gt;
+除了推荐人撰写的文案以外，每篇推文下都留下了推文号对这篇文章认真的评论。&lt;br&gt;
 &lt;&lt;if $jidu&gt;0&gt;&gt;但不知为何，一想到那些都是小北写的，你心里就有些不舒服。&lt;br&gt;[[你很介意|你很介意（小北推文号）]]&lt;br&gt;
 [[没什么大不了的|没什么大不了的（小北推文号）]]&lt;br&gt;
 &lt;&lt;else&gt;&gt;小北，你是天使吗……&lt;br&gt;[[返回|逛小斧头]]&lt;&lt;/if&gt;&gt;
@@ -11236,14 +11239,14 @@ UI.restart();
 [[当作没看见]]&lt;br&gt;
 &lt;&lt;set $cishu-=1&gt;&gt;
 &lt;&lt;set $tuiwenhaotouce=1&gt;&gt;
-&lt;&lt;elseif $tuiwenhaotouce==1 and $tuiwenhaozixi==0&gt;&gt;
+&lt;&lt;elseif $tuiwenhaotouce==1 and $tuiwenzhaozixi==0&gt;&gt;
 你点进吐槽bot，看到上次那条吐槽推文号的动态下面，为推文号说话的评论都不见了，取而代之的都是对推文号的攻击和谩骂。&lt;br&gt;&lt;&lt;set $tuiwenhaotouce=2&gt;&gt;
 &lt;&lt;if $daqun&gt;=15&gt;&gt;你看到里面有几个群里的熟人。&lt;br&gt;
 [[询问群友]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[尽力解释]]&lt;br&gt;
 &lt;&lt;if $xiaobei&gt;0&gt;&gt;[[告诉小北]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[与我无关]]&lt;br&gt;
-&lt;&lt;elseif $tuiwenhaotouce==1 and $tuiwenhaozixi==1&gt;&gt;
+&lt;&lt;elseif $tuiwenhaotouce==1 and $tuiwenzhaozixi==1&gt;&gt;
 你点进吐槽bot，又看到新的一条针对推文号的吐槽。&lt;br&gt;
 这条投稿直言推文号皮下会暗中和亲友泄露投稿人信息，还私下里蛐蛐推文的好坏，还放出了一张截图作为证据。&lt;br&gt;&lt;&lt;set $tuiwenhaotouce=2&gt;&gt;
 评论里一片骂声。&lt;br&gt;
@@ -11286,6 +11289,8 @@ UI.restart();
 [[返回|逛小斧头]]</tw-passagedata><tw-passagedata pid="765" name="尽力解释" tags="" position="725,6150" size="100,100">怎么可以骂小北呢！小北她建立这个推文号分文不取，默默地为圈里的大家付出，希望每位辛苦做饭的老师都能被看到，为什么要被这样诋毁造谣啊？
 你冲锋陷阵尽力为小北解释，可是越描越黑，她们都说你才是推文号的皮下。
 &lt;&lt;set $mingsheng-=5&gt;&gt;
+你要把这件事告诉小北吗？
+[[告诉小北]]
 [[返回|逛小斧头]]</tw-passagedata><tw-passagedata pid="766" name="告诉小北" tags="" position="400,5925" size="100,100">你把吐槽bot上的事告诉了小北。
 【北极星】：嗯……我觉得，只要做好自己该做的事，身正不怕影子斜。
 【北极星】：谢谢$player老师，我不会放在心上的！
@@ -11295,7 +11300,7 @@ UI.restart();
 紫汐？这事和她有关系吗？
 &lt;&lt;if $qunzhuopen&gt;0&gt;&gt;[[问问紫汐]]&lt;&lt;/if&gt;&gt;
 [[算了，和我没关系]]
-</tw-passagedata><tw-passagedata pid="768" name="问问紫汐" tags="" position="600,6400" size="100,100">你打算问问紫汐怎么回事。&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="768" name="问问紫汐" tags="nobr" position="600,6400" size="100,100">你打算问问紫汐怎么回事。&lt;br&gt;
 &lt;&lt;if $qunzhu&gt;=50&gt;&gt;
 【紫汐】：那个啊，是我投的，因为我看那个推文号不爽很久了。&lt;br&gt;
 【紫汐】：谁让她们总是卡我的投稿？&lt;br&gt;
@@ -11313,6 +11318,7 @@ UI.restart();
 【紫汐】：关你什么事！&lt;br&gt;
 紫汐似乎不愿意和你多说。&lt;br&gt;
 &lt;&lt;set $qunzhu-=1&gt;&gt;
+你要把这件事告诉小北吗？&lt;br&gt;
 &lt;&lt;if $xiaobei&gt;0&gt;&gt;[[告诉小北]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[与我无关]]&lt;br&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="769" name="算了，和我没关系" tags="" position="725,6400" size="100,100">算了，这事和你有什么关系？
