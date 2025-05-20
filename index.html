@@ -1723,6 +1723,7 @@ Setting.addList("fontSize", {
 &lt;&lt;set $qiuyuechengqing=0&gt;&gt;
 &lt;&lt;set $qiuyuetuiquan=0&gt;&gt;
 &lt;&lt;set $xiaobeizhidaoqiuyuetuiquan=0&gt;&gt;
+&lt;&lt;set $qisuzixi=0&gt;&gt;
  /*上述数值已经计入二周目初始化了，要是再新增数值记得在这里的下面增加*/
 </tw-passagedata><tw-passagedata pid="5" name="写作等级计算" tags="widget nobr" position="1100,50" size="100,100">&lt;&lt;widget &quot;xiezuodengji&quot;&gt;&gt;/* 写作等级 */ 
 &lt;&lt;if $xiezuo&gt;=100 and $xiezuodengji==1&gt;&gt;
@@ -11778,7 +11779,7 @@ ai小鬼&lt;br&gt;
 [[算了，就这样]]
 </tw-passagedata><tw-passagedata pid="814" name="画手事件2倒计时" tags="nobr widget" position="1425,4475" size="100,100">&lt;&lt;widget &quot;huashoushijian2daojishi&quot;&gt;&gt;
 &lt;&lt;if $huashoushijian1==3&gt;&gt;&lt;&lt;set $huashoushijian2daojishi=$day+10&gt;&gt;&lt;&lt;set $huashoushijian1=4&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $day&gt;$huashoushijian2daojishi&gt;&gt;&lt;&lt;set $huashoushijian2=1&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $huashoushijian1==4&gt;&gt;&lt;&lt;if $day&gt;$huashoushijian2daojishi&gt;&gt;&lt;&lt;set $huashoushijian2=1&gt;&gt;&lt;&lt;set $huashoushijian1=5&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="815" name="画手事件2" tags="nobr widget" position="1425,4625" size="100,100">&lt;&lt;widget &quot;huashoushijian2&quot;&gt;&gt;
 猫羚给你发来了消息。&lt;br&gt;&lt;br&gt;
 【猫羚】：$player老师……我有件事想向你道歉。&lt;br&gt;
