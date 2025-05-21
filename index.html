@@ -3090,10 +3090,10 @@ Setting.addList("fontSize", {
     &lt;&lt;qiuyuewanshou2&gt;&gt;
     &lt;&lt;elseif $qunzhutiaobolijian&gt;0 and $qiuyueyaoyan1==0&gt;&gt;
     &lt;&lt;qiuyueyaoyan1&gt;&gt;
-    &lt;&lt;elseif $qiuyuechaoxi==1 and $qiuyuezhidaozixibaofu==0&gt;&gt;
+    &lt;&lt;elseif $qiuyuechaoxi&gt;=1 and $qiuyuezhidaozixibaofu==0&gt;&gt;
     你给秋月发消息，问她还好吗，但她只是说自己心里很乱，不想继续和你聊天了。&lt;br&gt;
     [[返回|玩智能手机]]
-    &lt;&lt;elseif $qiuyuechaoxi==1 and $qiuyuezhidaozixibaofu==1 and $qiuyuehuaiyizixi==0 and $qiuyuechengqing==0&gt;&gt;
+    &lt;&lt;elseif $qiuyuechaoxi&gt;=1 and $qiuyuezhidaozixibaofu==1 and $qiuyuehuaiyizixi==0 and $qiuyuechengqing==0&gt;&gt;
     &lt;&lt;qiuyuehuaiyizixi&gt;&gt;
     &lt;&lt;else&gt;&gt;
 你打算和秋月聊天。&lt;br&gt;
@@ -9843,7 +9843,7 @@ END：在风口上猪都能飞起来
     &lt;div class=&quot;deadline-info1&quot;&gt;&lt;&lt;baomingtixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info2&quot;&gt;&lt;&lt;ddltixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info3&quot;&gt;&lt;&lt;hezhiddltixing&gt;&gt;&lt;/div&gt;
-    &lt;div class=&quot;tips&quot;&gt;&lt;&lt;tishiwenben&gt;&gt;&lt;/div&gt;
+    &lt;div class=&quot;.tip-text&quot;&gt;&lt;&lt;tishiwenben&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;status-text&quot;&gt;&lt;&lt;if $jidu&gt;0&gt;&gt;你正在嫉妒中。&lt;&lt;/if&gt;&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/do&gt;&gt;
@@ -11154,12 +11154,12 @@ END：在风口上猪都能飞起来
 &lt;&lt;if $gouwuopen==0&gt;&gt;这里空空的，你想用点什么来装饰一下。哦对了，你可以买谷啊！&lt;br&gt;
 &lt;&lt;set $gouwuopen=1&gt;&gt;行动中添加了【买谷】选项。&lt;br&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;if $maimaimai&gt;0&gt;&gt;你看着房间里花了$maimaimai元买下的谷子，不由得露出了满意的微笑。&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $maimaimai&gt;0&gt;&gt;你看着房间里花了$maimaimai元买下的谷子，不由得露出了满意的微笑。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qiuyuebenzi==4 and $cishu&gt;0&gt;&gt;
 秋月送你的同人本放在你的书架上。[[看秋月的同人本|阅读]]行动点-1&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hezhifashou==2&gt;&gt;你参与的合志放在你的书架上。[[查看合志]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $ziliubenshu&gt;0&gt;&gt;你的同人本放在书架上。[[查看同人本]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ziliubenshu&gt;0&gt;&gt;你的同人本放在书架上。[[查看同人本]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qinyouben[$zengsongbianhao]&gt;0 and $dahuodaili[$zengsongbianhao]==2&gt;&gt;你预留的本子堆在房间里。&lt;br&gt;
 [[处理预留本|亲友本赠送]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 [[返回|快乐同人女]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="729" name="查看合志" tags="" position="425,5525" size="100,100">这是你和$cp圈内众人一起努力的结果，看到大家的同人图和同人文，你的心中产生了想搞一辈子$cp的念头。
