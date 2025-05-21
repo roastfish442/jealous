@@ -1871,6 +1871,7 @@ Setting.addList("fontSize", {
 来成为同人文手吧！&lt;br&gt;
 准备好踏上一条残酷的道路了吗？&lt;br&gt;
 本游戏中含有令人不愉快的要素以及不道德的行为，请勿模仿。&lt;br&gt;
+·如在游戏中遇到bug，请加入玩家群反馈：1043733515&lt;br&gt;
 &lt;br&gt;
 您的网名是： &lt;&lt;textbox &quot;$player&quot; &quot;小P&quot;  autofocus&gt;&gt;&lt;br&gt;
 &lt;br&gt;
@@ -1878,7 +1879,7 @@ Setting.addList("fontSize", {
 &lt;br&gt;
 原作名称是： &lt;&lt;textbox &quot;$yuanzuo&quot; &quot;我cp是真的&quot;  autofocus&gt;&gt;&lt;br&gt;
 &lt;br&gt;
-[[确认|序]]
+[[确认|序]]&lt;br&gt;
 &lt;/center&gt;</tw-passagedata><tw-passagedata pid="11" name="序" tags="" position="450,350" size="100,100">某年某月某日，由于你太爱$yuanzuo的$cp，你终于决定开始写同人文！
 这是你值得纪念的初次提笔，你即将写下人生中第一篇同人——往往也是最差的一篇。
 但那又如何！谁也不是生来就会写作！
@@ -2130,7 +2131,7 @@ Setting.addList("fontSize", {
     &lt;&lt;else&gt;&gt;
 	&lt;&lt;richangteshushijianpanduan&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-&lt;&lt;zuobiqi&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="22" name="玩智能手机" tags="nobr" position="625,750" size="100,100">&lt;&lt;if $cishu&gt;0&gt;&gt;
 [[逛小斧头]]&lt;br&gt;
 [[刷短视频]]&lt;br&gt;
@@ -6034,7 +6035,7 @@ ai写文不得好死！&lt;br&gt;
 你在买谷上花了$maimaimai元。
 你一共参加过$canjiahuodong个24h活动。
 你总共接稿$jiegaozongshuliang次，成功完成的有$wanchengshuliang次。
-你一共筹备过$book本同人，其中有$wanshoushuliang本完售，总共卖出了$tongrenxiaoshouzongshu本。
+你一共筹备过$book本同人，其中有$wanshoushuliang本完售。
 你获得的最高人气为$zuigaorenqi，最高热度为$zuigaoredu，最终的写作等级为$xiezuodengji级。
 
 &lt;strong&gt;您最终获得的称号为：&lt;&lt;chenghaojisuan&gt;&gt;&lt;/strong&gt;
@@ -9859,7 +9860,7 @@ END：在风口上猪都能飞起来
     &lt;div class=&quot;deadline-info1&quot;&gt;&lt;&lt;baomingtixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info2&quot;&gt;&lt;&lt;ddltixing&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;deadline-info3&quot;&gt;&lt;&lt;hezhiddltixing&gt;&gt;&lt;/div&gt;
-    &lt;div class=&quot;.tip-text&quot;&gt;&lt;&lt;tishiwenben&gt;&gt;&lt;/div&gt;
+    &lt;div class=&quot;tip-text&quot;&gt;&lt;&lt;tishiwenben&gt;&gt;&lt;/div&gt;
     &lt;div class=&quot;status-text&quot;&gt;&lt;&lt;if $jidu&gt;0&gt;&gt;你正在嫉妒中。&lt;&lt;/if&gt;&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/do&gt;&gt;
@@ -12025,7 +12026,7 @@ ai小鬼&lt;br&gt;
 【秋月】：气死我了，我当同人女一辈子安分守己，哪里惹到这人了！
 【秋月】：到底是哪条阴沟里的蛆，别让我逮到了！
 总之秋月看起来很生气。&lt;&lt;set $qiuyuezhidaozijibeitouce=1&gt;&gt;
-[[返回|逛小斧头]]</tw-passagedata><tw-passagedata pid="817" name="群主拉拢" tags="nobr widget" position="1600,2600" size="100,100">&lt;&lt;widget &quot;qunzhulalong&quot;&gt;&gt;
+[[返回|逛小斧头]]&lt;&lt;set $cesuoshuadaoqiuyue=0&gt;&gt;</tw-passagedata><tw-passagedata pid="817" name="群主拉拢" tags="nobr widget" position="1600,2600" size="100,100">&lt;&lt;widget &quot;qunzhulalong&quot;&gt;&gt;
 紫汐给你发来了消息：&lt;br&gt;&lt;br&gt;&lt;&lt;set $qunzhulalong=1&gt;&gt;
 【紫汐】：唉，最近烦死了。怎么靠同人本圈钱的女明星还在蹦跶啊？&lt;br&gt;
 【紫汐】：竟然还完售了，我们圈里怎么那么多蠢货！&lt;br&gt;
@@ -12377,7 +12378,7 @@ PC31开始售票了！可以在筹备PC31行动中购票了。&lt;br&gt;&lt;&lt;
 &lt;&lt;if $pcxiaobeizhuyiqi&gt;0&gt;&gt;你准备和小北一起订酒店。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pczixidaigou&gt;0&gt;&gt;你答应了紫汐帮忙代购。&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcmaolingwuliao&gt;0&gt;&gt;你答应了猫羚帮忙换无料。&lt;br&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $xiaobei&gt;0 and $pcwenxiaoben==0&gt;&gt;[[问小北]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $xiaobei&gt;0 and $pcwenxiaobei==0&gt;&gt;[[问小北]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qunzhuopen&gt;0 and $pcwenzixi==0&gt;&gt;[[问紫汐]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $qiuyueliaotian&gt;0 and $pcwenqiuyue==0&gt;&gt;[[问秋月]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $huashou&gt;0 and $pcwenmaoling==0&gt;&gt;[[问猫羚]]&lt;br&gt;&lt;&lt;/if&gt;&gt;
@@ -12438,17 +12439,23 @@ PC31开始售票了！可以在筹备PC31行动中购票了。&lt;br&gt;&lt;&lt;
 &lt;&lt;for _i to 0; _i lt $book; _i++&gt;&gt;
 &lt;&lt;if (_i+1)&gt;$book-$c&gt;&gt;
 &lt;&lt;if $yushouzhuangtai[_i]==&quot;已终止&quot;&gt;&gt;
-&lt;&lt;set $pckexuanben.push(&quot;$fanbook[_i]&quot;)&gt;&gt;
-&lt;&lt;set $pcbenchengben.push($baojia1[_i])&gt;&gt;
+&lt;&lt;set $benming=$fanbook[_i]&gt;&gt;
+&lt;&lt;set $benjia=$baojia1[_i]&gt;&gt;
+&lt;&lt;set $pckexuanben.push(&quot;$benming&quot;)&gt;&gt;
+&lt;&lt;set $pcbenchengben.push($benjia)&gt;&gt;
 &lt;&lt;set $pckexuanbenshu+=1&gt;&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;已完售&quot;&gt;&gt;
-&lt;&lt;set $pckexuanben.push(&quot;$fanbook[_i]&quot;)&gt;&gt;
-&lt;&lt;set $pcbenchengben.push($baojia1[_i])&gt;&gt;
+&lt;&lt;set $benming=$fanbook[_i]&gt;&gt;
+&lt;&lt;set $benjia=$baojia1[_i]&gt;&gt;
+&lt;&lt;set $pckexuanben.push(&quot;$benming&quot;)&gt;&gt;
+&lt;&lt;set $pcbenchengben.push($benjia)&gt;&gt;
 &lt;&lt;set $pckexuanbenshu+=1&gt;&gt;
 &lt;&lt;elseif $yushouzhuangtai[_i]==&quot;现货发售&quot;&gt;&gt;
 &lt;&lt;set $pckexuanbenshu+=1&gt;&gt;
-&lt;&lt;set $pckexuanben.push(&quot;$fanbook[_i]&quot;)&gt;&gt;
-&lt;&lt;set $pcbenchengben.push($baojia1[_i])&gt;&gt;
+&lt;&lt;set $benming=$fanbook[_i]&gt;&gt;
+&lt;&lt;set $benjia=$baojia1[_i]&gt;&gt;
+&lt;&lt;set $pckexuanben.push(&quot;$benming&quot;)&gt;&gt;
+&lt;&lt;set $pcbenchengben.push($benjia)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
@@ -12482,8 +12489,8 @@ $pckexuanben[_j]&lt;br&gt;
 你的钱不够。&lt;br&gt;
 [[返回|准备本子]]&lt;br&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="883" name="确认下印" tags="" position="1750,6225" size="100,100">你确认下印了。这批本子会按时送到PC31的官仓。&lt;&lt;set $pcbenzizhunbenwanle=1&gt;&gt;
-[[返回|筹备PC31]]</tw-passagedata><tw-passagedata pid="884" name="购票" tags="nobr" position="1450,5825" size="100,100">你准备购票了。
-买VIP票还是普通票呢？
+[[返回|筹备PC31]]</tw-passagedata><tw-passagedata pid="884" name="购票" tags="nobr" position="1450,5825" size="100,100">你准备购票了。&lt;br&gt;
+买VIP票还是普通票呢？&lt;br&gt;
 &lt;&lt;if $money&gt;=200&gt;&gt;[[VIP][$money-=200]]零用钱-200&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $money&gt;=100&gt;&gt;[[普票][$money-=100]]零用钱-100&lt;br&gt;
 &lt;&lt;else&gt;&gt;你的钱不够。&lt;br&gt;&lt;&lt;/if&gt;&gt;
@@ -12575,11 +12582,12 @@ $pckexuanben[_j]&lt;br&gt;
 &lt;&lt;elseif $pcwuliao&gt;=1&gt;&gt;你准备的无料不是很多，没过多久就发完了。&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcbenzizhunbenwanle&gt;0&gt;&gt;你来到了寄售你同人本的摊位。&lt;br&gt;
-&lt;&lt;if ($renqi/$pcbenchengbenshuliang)&gt;=100&gt;&gt;本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
-&lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&gt;=50&gt;&gt;本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
+&lt;&lt;if ($renqi/$pcbenchengbenshuliang)&gt;=100&gt;&gt;本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
+&lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&gt;=50&gt;&gt;本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
 &lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&lt;=10&gt;&gt;本子几乎没卖掉……唉，怎么会这样？&lt;br&gt;
 &lt;&lt;else&gt;&gt;
 本子卖得一般般，不知道会不会有剩。&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $renqi&gt;2000 and $mingsheng&gt;=0&gt;&gt;“什么？$player太太来了？”有好几个女孩听说你来参加PC31，都热情地向你招手。&lt;br&gt;
 有人自称是你的读者，还有一些是id很眼熟的画手和文手。你们握手和拥抱，享受着这短暂的相遇。&lt;br&gt;
@@ -12590,24 +12598,26 @@ $pckexuanben[_j]&lt;br&gt;
 你买了些本子和制品，提着满满的袋子坐下休息。小北也回来了，你们快乐地交流着这次的战利品。&lt;br&gt;
 快乐的时光总是稍纵即逝，也到了散场的时候了。&lt;br&gt;
 [[散场吃饭]]
-</tw-passagedata><tw-passagedata pid="891" name="PC31小北未离队" tags="nobr" position="925,7725" size="100,100">你和小北在$cp街道上到处闲逛。&lt;br&gt;&lt;&lt;if $pczixidaigou&gt;0 and $qunzhuopen&gt;0&gt;&gt;感觉自己快要跑断腿了，才买齐了紫汐想要的本子和制品。唉，参加PC也太累了！&lt;br&gt;&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="891" name="PC31小北未离队" tags="nobr" position="925,7725" size="100,100">你和小北在$cp街道上到处闲逛。&lt;br&gt;
+&lt;&lt;if $pczixidaigou&gt;0 and $qunzhuopen&gt;0&gt;&gt;感觉自己快要跑断腿了，才买齐了紫汐想要的本子和制品。唉，参加PC也太累了！&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcmaolingwuliao&gt;0 and $huashou&gt;0&gt;&gt;你用猫羚寄给你的无料跟其他摊位上的老师做了交换，收获颇丰！&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcwuliao&gt;=5&gt;&gt;你准备的无料多到发不完，于是改变策略，见人就塞！&lt;br&gt;
 &lt;&lt;elseif $pcwuliao&gt;=3&gt;&gt;你准备了不少无料和大家交换，充分享受了换无料的乐趣！&lt;br&gt;
 &lt;&lt;elseif $pcwuliao&gt;=1&gt;&gt;你准备的无料不是很多，没过多久就发完了。&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $pcbenzizhunbenwanle&gt;0&gt;&gt;你来到了寄售你同人本的摊位。&lt;br&gt;
-&lt;&lt;if ($renqi/$pcbenchengbenshuliang)&gt;=100&gt;&gt;本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
-&lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&gt;=50&gt;&gt;本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
+&lt;&lt;if ($renqi/$pcbenchengbenshuliang)&gt;=100&gt;&gt;本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
+&lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&gt;=50&gt;&gt;本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
 &lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&lt;=10&gt;&gt;本子几乎没卖掉……唉，怎么会这样？&lt;br&gt;
 &lt;&lt;else&gt;&gt;
 本子卖得一般般，不知道会不会有剩。&lt;br&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $renqi&gt;2000 and $mingsheng&gt;=0&gt;&gt;“什么？$player太太来了？”有好几个女孩听说你来参加PC31，都热情地向你招手。&lt;br&gt;
 有人自称是你的读者，还有一些是id很眼熟的画手和文手。你们握手和拥抱，享受着这短暂的相遇。&lt;br&gt;
 &lt;&lt;elseif $mingsheng&lt;0&gt;&gt;
 你不太敢报上自己的id，因为你感觉自己可能暗中结了不少的仇。不过还好没人知道你是谁，你仍旧能享受同人展上的快乐时光。&lt;br&gt;
-&lt;&lt;else&gt;&gt;你并不是圈里十分出名的人物，不过也有人或多或少地知道你，看过你的文章。搞同人很奇妙吧？明明你以为自己很不起眼，可是你的作品却还是被一些人记住了。&lt;br&gt;
+&lt;&lt;elseif $tongren&gt;=50&gt;&gt;你并不是圈里十分出名的人物，不过也有人或多或少地知道你，看过你的文章。搞同人很奇妙吧？明明你以为自己很不起眼，可是你的作品却还是被一些人记住了。&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 你和小北买了些本子和制品，提着满满的袋子坐下休息，快乐地交流着这次的战利品。&lt;br&gt;
 快乐的时光总是稍纵即逝，也到了散场的时候了。&lt;br&gt;
@@ -12682,9 +12692,9 @@ $pckexuanben[_j]&lt;br&gt;
 &lt;&lt;if $pcbenzizhunbenwanle&gt;0&gt;&gt;
 你来到了寄售你同人本的摊位。&lt;br&gt;
 &lt;&lt;if ($renqi/$pcbenchengbenshuliang)&gt;=100&gt;&gt;
-本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
+本子早就被一抢而空了！太棒了，场贩完售啦！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
 &lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&gt;=50&gt;&gt;
-本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;$changfanwanshou=1&gt;&gt;
+本子卖得不错，感觉完售完全没问题！&lt;br&gt;&lt;&lt;set $changfanwanshou=1&gt;&gt;
 &lt;&lt;elseif ($renqi/$pcbenchengbenshuliang)&lt;=10&gt;&gt;
 本子几乎没卖掉……唉，怎么会这样？&lt;br&gt;
 &lt;&lt;else&gt;&gt;
@@ -12696,7 +12706,7 @@ $pckexuanben[_j]&lt;br&gt;
 有人自称是你的读者，还有一些是id很眼熟的画手和文手。你们握手和拥抱，享受着这短暂的相遇。&lt;br&gt;
 &lt;&lt;elseif $mingsheng&lt;0&gt;&gt;
 你不太敢报上自己的id，因为你感觉自己可能暗中结了不少的仇。不过还好没人知道你是谁，你仍旧能享受同人展上的快乐时光。&lt;br&gt;
-&lt;&lt;else&gt;&gt;你并不是圈里十分出名的人物，不过也有人或多或少地知道你，看过你的文章。搞同人很奇妙吧？明明你以为自己很不起眼，可是你的作品却还是被一些人记住了。&lt;br&gt;
+&lt;&lt;elseif $tongren&gt;=50&gt;&gt;你并不是圈里十分出名的人物，不过也有人或多或少地知道你，看过你的文章。搞同人很奇妙吧？明明你以为自己很不起眼，可是你的作品却还是被一些人记住了。&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 你买了些本子和制品，提着满满的袋子坐下休息。&lt;br&gt;
 快乐的时光总是稍纵即逝，也到了散场的时候了。&lt;br&gt;
