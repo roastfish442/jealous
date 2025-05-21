@@ -739,7 +739,23 @@ progress.shuxing::-webkit-progress-bar {
 }
 
 /* 信息区域样式 */
-.deadline-info1, .deadline-info2, .deadline-info3, .tip-text, .status-text {
+.deadline-info1 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.deadline-info2 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.deadline-info3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.tip-text {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.status-text {
   font-size: 14px;
   margin-bottom: 6px;
 }
@@ -1903,7 +1919,7 @@ Setting.addList("fontSize", {
         &lt;&lt;if $xiaobei&gt;0&gt;&gt;
 	&lt;&lt;set $redu+=10&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
-        &lt;&lt;if $qiuyue&gt;0 and $qiuyueliaotian&gt;0&gt;&gt;
+        &lt;&lt;if $qiuyue&gt;0 and $qiuyueliaotian&gt;0 and $qiuyuetuiquan==0&gt;&gt;
 	&lt;&lt;set $redu+=50&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
          &lt;&lt;if $huashou&gt;0&gt;&gt;
@@ -9934,7 +9950,7 @@ END：在风口上猪都能飞起来
 [[返回|材料准备]]</tw-passagedata><tw-passagedata pid="601" name="内页（正式流程）" tags="nobr" position="2000,4900" size="100,100">你可以选择追加未公开文章和guest，确定文本内容后再进行校对和排版。当然，你也可以跳过你认为不必要的流程，直接进行排版工作。&lt;br&gt;
 目前本子的内容如下：&lt;br&gt;
 总字数$zongzishu[$b]万字，收录$tedian篇特典，$guest篇guest，预计页数$yeshu[$b]P。&lt;br&gt;
-校对：$jiaoduizhuangtai&lt;br&gt;&lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $jiaoduigongqi&gt;0&gt;&gt;，剩余$jiaoduigongqi天。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+校对：$jiaoduizhuangtai&lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;if $jiaoduigongqi&gt;0&gt;&gt;，剩余$jiaoduigongqi天。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;br&gt;
 排版：$paibanzhuangtai&lt;&lt;if $paibangongqi&gt;0&gt;&gt;，剩余$paibangongqi天。&lt;&lt;/if&gt;&gt;&lt;br&gt;
 &lt;&lt;if $jiaoduizhuangtai==&quot;不干了&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
