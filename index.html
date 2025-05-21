@@ -2231,9 +2231,9 @@ Setting.addList("fontSize", {
         哇！有这么多人喜欢这篇文，真是太棒了！&lt;&lt;set $reqing+=1&gt;&gt;&lt;br&gt;
         你的写作热情被点燃了。&lt;br&gt;
         热情+1&lt;br&gt;
-         &lt;&lt;elseif $redu&gt;=60&gt;&gt;
+         &lt;&lt;elseif $redu&gt;=90&gt;&gt;
         	这个热度一般般，不过还在预期之中，下次努力吧。&lt;br&gt;
-       		 &lt;&lt;elseif $redu&gt;=40&gt;&gt;
+       		 &lt;&lt;elseif $redu&gt;=60&gt;&gt;
         明明写得很好，为什么热度上不去？唉，下次努力吧。&lt;br&gt;
         热情-1&lt;br&gt; &lt;&lt;set $reqing-=1&gt;&gt;
         &lt;&lt;else&gt;&gt;
@@ -2257,7 +2257,7 @@ Setting.addList("fontSize", {
         哇！有这么多人喜欢这篇文，真是太棒了！&lt;&lt;set $reqing+=1&gt;&gt;&lt;br&gt;
         你的写作热情被点燃了。&lt;br&gt;
         热情+1&lt;br&gt;
-         &lt;&lt;elseif $redu&gt;=80&gt;&gt;
+         &lt;&lt;elseif $redu&gt;=100&gt;&gt;
         这个热度一般般，不过还在预期之中，下次努力吧。&lt;br&gt;
         &lt;&lt;else&gt;&gt;
 		你觉得这篇文章不该是这个热度，但为什么会这样？&lt;br&gt;
@@ -8511,22 +8511,22 @@ END：在风口上猪都能飞起来
 热情+1，压力-1。&lt;br&gt;&lt;&lt;set $yali-=1&gt;&gt;&lt;&lt;set $reqing+=1&gt;&gt;
 [[返回|逛小斧头]]
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="502" name="文画接龙6结果" tags="nobr" position="5550,1900" size="100,100">&lt;&lt;set $lianwen6jieshu=1&gt;&gt;
-&lt;&lt;if $lianwen6&lt;=0&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="502" name="文画接龙6结果" tags="nobr" position="5550,1900" size="100,100">&lt;&lt;set $jielong6jieshu=1&gt;&gt;
+&lt;&lt;if $jielong6&lt;=0&gt;&gt;
 好多粮啊！你大吃特吃。&lt;br&gt;
-看了这么多老师的文章，你文思泉涌，对$cp的爱更深了。&lt;br&gt;
+看了这么多老师的作品，你文思泉涌，对$cp的爱更深了。&lt;br&gt;
 灵感+1，热情+1。&lt;br&gt;&lt;&lt;set $linggan+=1&gt;&gt;&lt;&lt;set $reqing+=1&gt;&gt;
 [[返回|逛小斧头]]
 &lt;&lt;else&gt;&gt;
 这次活动你也有参与，看到你和这么多人齐心协力的结果，一股自豪感油然而生！&lt;br&gt;
-	&lt;&lt;if $lianwen6redu&lt;=50&gt;&gt;但是，当你看到自己那少得可怜的热度的时候，一种不甘的情感涌上心头。&lt;br&gt;
+	&lt;&lt;if $jielong6redu&lt;=50&gt;&gt;但是，当你看到自己那少得可怜的热度的时候，一种不甘的情感涌上心头。&lt;br&gt;
 在你痛苦地发现所有文章的热度都高过你的时候，这种不甘达到了巅峰。&lt;br&gt;
 [[把不甘转化为恨意]]&lt;br&gt;
 [[把不甘转化为动力]]&lt;br&gt;
 	&lt;&lt;else&gt;&gt;
-你今后还想更多地参加活动，给$cp添砖加瓦。&lt;br&gt;
-热情+1，压力-1。&lt;br&gt;&lt;&lt;set $yali-=1&gt;&gt;&lt;&lt;set $reqing+=1&gt;&gt;
-[[返回|逛小斧头]]
+但当你发现，所有同人图的热度都高出同人文几倍不止，你就有些不舒服了。&lt;br&gt;
+[[这很正常|这很正常（文画热度差异）]]&lt;br&gt;
+[[感到愤怒|感到愤怒（文画热度差异）]]&lt;br&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="503" name="文画接龙7结果" tags="nobr" position="6000,400" size="100,100">&lt;&lt;set $jielong7jieshu=1&gt;&gt;
 &lt;&lt;if $jielong7&lt;=0&gt;&gt;
@@ -11372,7 +11372,7 @@ END：在风口上猪都能飞起来
 你在买谷上花了$maimaimai元。
 你一共参加过$canjiahuodong个24h活动。
 你总共接稿$jiegaozongshuliang次，成功完成的有$wanchengshuliang次。
-你一共筹备过$book本同人，其中有$wanshoushuliang本完售，总共卖出了$tongrenxiaoshouzongshu本。
+你一共筹备过$book本同人，其中有$wanshoushuliang本完售。
 你获得的最高人气为$zuigaorenqi，最高热度为$zuigaoredu，最终的写作等级为$xiezuodengji级。
 
 &lt;strong&gt;您最终获得的称号为：&lt;&lt;chenghaojisuan&gt;&gt;&lt;/strong&gt;
