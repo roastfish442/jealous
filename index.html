@@ -2122,6 +2122,7 @@ Setting.addList("fontSize", {
 &lt;&lt;set $rementicai=0&gt;&gt; /* 热门题材 */ 
 &lt;&lt;set $chaoxi=0&gt;&gt; /* 抄袭 */ 
 &lt;&lt;if $cabianfenghao==1&gt;&gt;&lt;&lt;set $cabianfenghao=0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $xiaobei&lt;0&gt;&gt;&lt;&lt;set $beixiaobeilahei=1&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;teshuriqi&gt;&gt;/* 特殊日期 */ 
 &lt;&lt;turanhuole&gt;&gt;/* 突然火了 */ 
 &lt;&lt;zhuanshengtongrenben&gt;&gt;
@@ -12792,7 +12793,7 @@ $pckexuanben[_j]&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 你买了些本子和制品，提着满满的袋子坐下休息。&lt;br&gt;
 快乐的时光总是稍纵即逝，也到了散场的时候了。&lt;br&gt;
-[[散场]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="895" name="散场" tags="nobr" position="1100,7850" size="100,100">&lt;&lt;if $xiaobei&lt;0 and $qiuyuetuiquan==1 and $qiuyueliaotian&lt;0&gt;&gt;
+[[散场]]&lt;br&gt;</tw-passagedata><tw-passagedata pid="895" name="散场" tags="nobr" position="1100,7850" size="100,100">&lt;&lt;if $xiaobei&lt;0 and $qiuyuetuiquan==1 and $qiuyueliaotian&lt;0 and $beixiaobeilahei==1&gt;&gt;
 你坐上了地铁。显而易见的，你不可能在人头攒动的地铁上找到一个座位。排队和逛展让你的腿不堪重负，你尽可能地死死拉住把手，让自己站得稳一些。&lt;br&gt;
 突然，坐在你面前的女孩对你招手示意。她努力挪动身体，给你让出了一个小小的位置，示意你坐下。&lt;br&gt;
 你如释重负地坐了下来，对她道谢。她笑了：“不客气，你也嗑$cp吧？我看到你包上的挂饰就知道了。”&lt;br&gt;
@@ -12807,7 +12808,7 @@ $pckexuanben[_j]&lt;br&gt;
 
 END：相见不相识&lt;br&gt;
 [[结局]]&lt;br&gt;&lt;&lt;set $day+=1&gt;&gt;
-&lt;&lt;elseif $xiaobei&lt;0&gt;&gt;
+&lt;&lt;elseif $xiaobei&lt;0 and $beixiaobeilahei==1&gt;&gt;
 你坐上了地铁。显而易见的，你不可能在人头攒动的地铁上找到一个座位。排队和逛展让你的腿不堪重负，你尽可能地死死拉住把手，让自己站得稳一些。&lt;br&gt;
 突然，坐在你面前的女孩对你招手示意。她努力挪动身体，给你让出了一个小小的位置，示意你坐下。&lt;br&gt;
 你如释重负地坐了下来，对她道谢。她笑了：“不客气，你也嗑$cp吧？我看到你包上的挂饰就知道了。”&lt;br&gt;
